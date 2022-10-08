@@ -59,6 +59,118 @@ $cakeDescription = 'zogravity';
               </div>
                 <div class="down app">
                   <i class="fa-regular fa-circle-xmark" id="icon4"></i>
+
+
+                  <p> background </p>
+                  <label>Địa điểm：
+                      <select class="address" name="backgroun_header">
+                      <option value="<?= $interface['backgroun_header'] ?>">background</option>
+                      <option value="#ccc">xam</option>
+                      <option value="#FFF">Trang</option>
+                      <option value="#66CCFF">xanh</option>
+                      </select>
+                  </label>
+                    <p>text color</p>
+                  <label>
+                      <select class="address" name="color_header">
+                      <option style="background-color:<?= $interface['backgroun_header'] ?>;" value="<?= $interface['color_header'] ?>"></option>
+                      <option style="background-color: #000;" value="#ccc">xam</option>
+                      <option style="background-color: #fff;" value="#FFF">Trang</option>
+                      <option style="background-color: #ccc;" value="#66CCFF">xanh</option>
+                      </select>
+                  </label>
+                    <p>image headers</p>
+                  <label>
+                      <select class="address" name="image_header">
+                      <option value="<?= $interface['image_header'] ?>"><?= $interface['image_header'] ?></option>
+                      <option value="#ccc">xam</option>
+                      <option value="#FFF">Trang</option>
+                      <option value="#66CCFF">xanh</option>
+                      </select>
+                  </label>s
+                    <p>image pour</p>
+                  <label>
+                      <select class="address" name="image_pour">
+                      <option value="<?= $interface['image_pour'] ?>"><?= $interface['image_pour'] ?></option>
+                      <option value="#ccc">xam</option>
+                      <option value="#FFF">Trang</option>
+                      <option value="#66CCFF">xanh</option>
+                      </select>
+                  </label>
+                    <p>color prou</p>
+                  <label>
+                      <select class="address" name="color_prou">
+                      <option value="<?= $interface['color_prou'] ?>"><?= $interface['color_prou'] ?></option>
+                      <option value="#ccc">xam</option>
+                      <option value="#FFF">Trang</option>
+                      <option value="#66CCFF">xanh</option>
+                      </select>
+                  </label>
+
+
+                  <p>
+                  <input type="radio" id="sales" name="div" value="sales" checked>
+                  <label for="sales">Kinh doanh</label><br>
+                  <input type="radio" id="develop" name="div" value="develop">
+                  <label for="develop">Dev</label><br>
+                  <input type="radio" id="human" name="div" value="human">
+                  <label for="human">Nhân sự</label><br>
+                  </p>
+                  <i class="fa-solid fa-images" id="image2"></i>
+                  <div class="image" id="image">
+                    <ul>
+                      <i class="fa-solid fa-images" id="image3"></i>
+                          <li><div class="image1"><input></input></div></li>
+                          <li><div class="image1"><input></input></div></li>
+                          <li><div class="image1"><input></input></div></li>
+                          <li><div class="image1"><input></input></div></li>
+                          <li><div class="image1"><input></input></div></li>
+                          <li><div class="image1"><input></input></div></li>
+
+
+                    </ul>
+
+                  </div>
+                  <script type="text/javascript">
+                  const imageOpen = document.getElementById('image2');
+                  const settingImage = document.querySelector('.image');
+                  const imageClose = document.getElementById('image3');
+
+                  function showImage(){
+                    settingImage.classList.add('open')
+                  }
+                  function hideImage(){
+                    settingImage.classList.remove('open')
+                  }
+                  console.log(imageOpen);
+                    console.log(settingImage);
+                      console.log(imageClose);
+
+                  imageOpen.addEventListener('click', showImage)
+                  imageClose.addEventListener('click', hideImage)
+                  </script>
+
+                  <!-- <script>
+                  function inputChange(event){
+                      console.log(event.currentTarget.value);
+                  }
+
+                  let text = document.getElementById('nametext');
+                  text.addEventListener('change', inputChange);
+
+                  let address = document.getElementById('address');
+                  address.addEventListener('change', inputChange);
+
+                  let radiosales = document.getElementById('sales');
+                  radiosales.addEventListener('change', inputChange);
+
+                  let radiodevelop = document.getElementById('develop');
+                  radiodevelop.addEventListener('change', inputChange);
+
+                  let radiohuman = document.getElementById('human');
+                  radiohuman.addEventListener('change', inputChange);
+                  </script> -->
+
                   <script type="text/javascript">
                   const iconOpen1 = document.getElementById('icon3');
                   const settingApp1 = document.querySelector('.app');
@@ -459,4 +571,3 @@ $cakeDescription = 'zogravity';
 </html>
 <?php endforeach; ?>
 <?php endforeach; ?>
-
