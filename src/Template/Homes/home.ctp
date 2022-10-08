@@ -26,6 +26,21 @@ $cakeDescription = 'zogravity';
 <?= $this->Form->create($header);?>
             <div class="a js-app">
               <i class="fa-solid fa-circle-xmark" id="icon2"></i>
+              <button class="b">
+              <?= $this->Html->link(__('New Header'), ['controller' => 'Headers', 'action' => 'add']) ?>
+
+            </button>
+              <button class="c">
+             <?= $this->Html->link(__('New Presses'), ['controller' => 'Pres', 'action' => 'add']) ?>
+
+           </button>
+              <button class="d">
+            <?= $this->Html->link(__('New Pours'), ['controller' => 'Pours', 'action' => 'add']) ?>
+
+          </button>
+              <button class="e">
+              <?= $this->Html->link(__('New Interfaces'), ['controller' => 'Interfaces', 'action' => 'add']) ?>
+            </button>
                 <script type="text/javascript">
                 const iconOpen = document.getElementById('icon1');
                 const settingApp = document.querySelector('.js-app');
@@ -444,3 +459,4 @@ $cakeDescription = 'zogravity';
 </html>
 <?php endforeach; ?>
 <?php endforeach; ?>
+
