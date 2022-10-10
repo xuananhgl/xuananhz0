@@ -16,12 +16,14 @@ class HomesController extends AppController
         $this->loadModel('Pres');
         $this->loadModel('Pouss');
         $this->loadModel('Articles');
-
+          $this->loadModel('Users');
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
     public function home(){
 
-                      $this->loadModel('Headers');
+                        $user = $this->Users->get(  $this->request->session()->read('Auth.User.id'));
+                        $this->set('user', $user);
+                        $this->loadModel('Headers');
 
                           $headers= $this->Headers->find(
                               'all', [
@@ -77,10 +79,13 @@ class HomesController extends AppController
                               ]
                               );
                               $this->set(compact('interfaces'));
+                              foreach ($interfaces as $interface)
                                 // ============================================
                                   $pre = $this->Pres->get($pres[0]['id']);
                                   $pre1 = $this->Pres->get($pres[1]['id']);
                                   $pre2 = $this->Pres->get($pres[2]['id']);
+                                  $interface = $this->Interfaces->get($interface['id']);
+
                                   // GET ID ARTCLE
                                   $article1 = $this->Articles->get($article[0]['id_article']);
                                   $article2 = $this->Articles->get($article[1]['id_article']);
@@ -139,6 +144,15 @@ class HomesController extends AppController
                                        'body' => $this->request->getData('body4'),
                                        'about' => $this->request->getData('about4'),
                                          ];
+                                 $data6 = [
+                                       'backgroun_header' => $this->request->getData('backgroun_header'),
+                                       'color_header' => $this->request->getData('color_header'),
+                                       'color_prou' => $this->request->getData('color_prou'),
+                                       'image_pour' => $this->request->getData('image_pour'),
+                                       'image_header' => $this->request->getData('image_header'),
+
+                                         ];
+
 
                                      $this->Pres->patchEntity($pre, $this->request->getData());
                                      $this->Pres->patchEntity($pre1, $data);
@@ -148,13 +162,14 @@ class HomesController extends AppController
                                      $this->Articles->patchEntity($article2, $data3);
                                      $this->Articles->patchEntity($article3, $data4);
                                      $this->Articles->patchEntity($article4, $data5);
+                                     $this->Interfaces->patchEntity($interface, $data6);
                                      // debug($pre);
                                      // debug($pre1);
                                      // debug($pre2);
                                      // exit;
                                    if ($this->Pres->save($pre) && $this->Pres->save($pre1) && $this->Pres->save($pre2) && $this->Headers->save($header)
                                        && $this->Articles->save($article1) && $this->Articles->save($article2) && $this->Articles->save($article3)
-                                       && $this->Articles->save($article4)) {
+                                       && $this->Articles->save($article4) && $this->Interfaces->save($interface)) {
                                        $this->Flash->success(__('Your header has been updated.'));
                                        return $this->redirect(['action' => 'home']);
                                    }
@@ -169,6 +184,7 @@ class HomesController extends AppController
                                       $this->set('article2', $article2);
                                       $this->set('article3', $article3);
                                       $this->set('article4', $article4);
+                                      $this->set('interface', $interface);
 
     }
        public function index()
