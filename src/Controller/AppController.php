@@ -49,6 +49,7 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->setLocale();
         $this->loadComponent('Auth', [
+
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -61,13 +62,14 @@ class AppController extends Controller
                 'controller' => 'Users',
                 'action' => 'login'
             ],
+            'authorize'=> 'Controller',
              // If unauthorized, return them to page they were just on
             'unauthorizedRedirect' => $this->referer()
         ]);
 
         // Allow the display action so our PagesController
         // continues to work. Also enable the read only actions.
-        $this->Auth->allow(['display']);
+        $this->Auth->allow(['index', 'display']);
         //Load locale
         //I18n::setLocale($locale);
         /*
@@ -76,7 +78,7 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
-         public function setLocale()
+     public function setLocale()
          {
               if($this->request->getQuery('locale')){
                     $locale =$this->request->getQuery('locale');
@@ -85,5 +87,29 @@ class AppController extends Controller
 
 
          }
+     public function isAuthorized($user = null)
+          {
+    if (isset($user['role']) && $user['role'] === 'admin') {
+        return true;}
+
+          $action = $this->request->getParam('action');
+        if (in_array($action, ['add', 'edit', 'home', 'list', 'view'])) {
+         return (bool)($user['role'] === 'author');
+       }
+        // if ($this->request->getParam('action') === 'edit') {
+        //     return (bool)($user['role'] === 'authors');
+        //   }
+        // if ($this->request->getParam('action') === 'list') {
+        //     return (bool)($user['role'] === 'author');
+        //   }
+        // if ($this->request->getParam('action') === 'add') {
+        //       return (bool)($user['role'] === 'author');
+        //     }
+
+
+
+         // Default deny
+         return false;
+     }
 
 }
