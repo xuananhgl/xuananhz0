@@ -21,25 +21,27 @@ $cakeDescription = 'zogravity';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-  <i class="fa-solid fa-gear" id="icon1"></i>
-  <i class="fa-solid fa-bars" id="icon3"></i>
-<?= $this->Form->create($header);?>
+
+              <i style="color: #CCC;" class="fa-solid fa-gear" id="icon1"></i>
+              <i style="color: #CCC;" class="fa-solid fa-gear" id="icon3"></i>
+            <?= $this->Form->create($header);?>
             <div class="a js-app">
-              <i class="fa-solid fa-circle-xmark" id="icon2"></i>
+              <i class="fa-regular fa-circle-xmark" id="icon2"></i>
+              <div class ="gmail" style="background-color:<?= $interface['backgroun_header'] ?>"><h4><?= $this->Html->link(__(($user->email)), ['controller' => 'Users', 'action' => 'view', $user->id])?></h4></div>
               <button class="b">
-              <?= $this->Html->link(__('New Header'), ['controller' => 'Headers', 'action' => 'add']) ?>
+              <?= $this->Html->link(__('Header'), ['controller' => 'Headers', 'action' => 'add']) ?>
 
             </button>
-              <button class="c">
-             <?= $this->Html->link(__('New Presses'), ['controller' => 'Pres', 'action' => 'add']) ?>
+              <button class="b">
+             <?= $this->Html->link(__('Presses'), ['controller' => 'Pres', 'action' => 'add']) ?>
 
            </button>
-              <button class="d">
-            <?= $this->Html->link(__('New Pours'), ['controller' => 'Pours', 'action' => 'add']) ?>
+              <button class="b">
+            <?= $this->Html->link(__('Pours'), ['controller' => 'Pours', 'action' => 'add']) ?>
 
           </button>
-              <button class="e">
-              <?= $this->Html->link(__('New Interfaces'), ['controller' => 'Interfaces', 'action' => 'add']) ?>
+              <button class="b">
+              <?= $this->Html->link(__('Interfaces'), ['controller' => 'Interfaces', 'action' => 'add']) ?>
             </button>
                 <script type="text/javascript">
                 const iconOpen = document.getElementById('icon1');
@@ -64,19 +66,27 @@ $cakeDescription = 'zogravity';
                   <p> background </p>
                   <label>Địa điểm：
                       <select class="address" name="backgroun_header">
-                      <option value="<?= $interface['backgroun_header'] ?>">background</option>
-                      <option value="#ccc">xam</option>
-                      <option value="#FFF">Trang</option>
-                      <option value="#66CCFF">xanh</option>
+                      <option style="background-color: <?= $interface['backgroun_header'] ?>;" value="<?= $interface['backgroun_header'] ?>">background</option>
+                      <option style="background-color: #000;" value="#000"></option>
+                      <option style="background-color: #fff;" value="#FFF"></option>
+                      <option style="background-color: #ccc;" value="#ccc"></option>
+                      <option style="background-color: #AA0000;" value="#AA0000"></option>
+                      <option style="background-color: #777777;" value="#777777"></option>
+                      <option style="background-color: #EEEEEE;" value="#EEEEEE"></option>
+                      <option style="background-color: #AAAAAA;" value="#AAAAAA"></option>
                       </select>
                   </label>
                     <p>text color</p>
                   <label>
                       <select class="address" name="color_header">
-                      <option style="background-color:<?= $interface['backgroun_header'] ?>;" value="<?= $interface['color_header'] ?>"></option>
-                      <option style="background-color: #000;" value="#ccc">xam</option>
-                      <option style="background-color: #fff;" value="#FFF">Trang</option>
-                      <option style="background-color: #ccc;" value="#66CCFF">xanh</option>
+                      <option style="background-color:<?= $interface['color_header'] ?>;" value="<?= $interface['color_header'] ?>"></option>
+                      <option style="background-color: #000;" value="#000"></option>
+                      <option style="background-color: #fff;" value="#FFF"></option>
+                      <option style="background-color: #ccc;" value="#ccc"></option>
+                      <option style="background-color: #AA0000;" value="#AA0000"></option>
+                      <option style="background-color: #777777;" value="#777777"></option>
+                      <option style="background-color: #EEEEEE;" value="#EEEEEE"></option>
+                      <option style="background-color: #AAAAAA;" value="#AAAAAA"></option>
                       </select>
                   </label>
                     <p>image headers</p>
@@ -118,17 +128,29 @@ $cakeDescription = 'zogravity';
                   </p>
                   <i class="fa-solid fa-images" id="image2"></i>
                   <div class="image" id="image">
-                    <ul>
+                  <div class="imager">
+
+
+                  <div class="">
+
+                  <ul>
                       <i class="fa-solid fa-images" id="image3"></i>
-                          <li><div class="image1"><input></input></div></li>
-                          <li><div class="image1"><input></input></div></li>
-                          <li><div class="image1"><input></input></div></li>
-                          <li><div class="image1"><input></input></div></li>
-                          <li><div class="image1"><input></input></div></li>
-                          <li><div class="image1"><input></input></div></li>
+                          <li><div class="image1"><input value="<?= $this->Html->image($interface->image_header) ?>"><?= $this->Html->image($interface->image_header) ?></input></div></li>
+                          <li><div class="image1"><input><?= $this->Html->image($interface->image_header) ?></input></div></li>
+                          <li><div class="image1"><input><?= $this->Html->image($interface->image_header) ?></input></div></li>
+                    </ul>
+                   </div>
+                  <div class="">
+
+                   <ul>
+                          <li><div class="image1"><input><?= $this->Html->image($interface->image_header) ?></input></div></li>
+                          <li><div class="image1"><input><?= $this->Html->image($interface->image_header) ?></input></div></li>
+                          <li><div class="image1"><input><?= $this->Html->image($interface->image_header) ?></input></div></li>
 
 
                     </ul>
+                    </div>
+                    </div>
 
                   </div>
                   <script type="text/javascript">
@@ -513,7 +535,7 @@ $cakeDescription = 'zogravity';
                                           <i class="fa-brands fa-vimeo-v"></i>
                                         </div>
                                     </div>
-                                    <div class="setting "><button class="js-open-model" > <i class="fa-solid fa-earth-asia"> </i><?= __('changer de région') ?></button></div>
+                                    <div class="js-open-model" > <i class="fa-solid fa-earth-asia"> </i><?= __('changer de région') ?></div>
                                 </div>
                             </div>
                             <div class="footer_last">
@@ -537,9 +559,9 @@ $cakeDescription = 'zogravity';
                                 <div class="langue">
                                     <ul>
                                     <div class="ul">
-                                        <li> <a href="http://localhost:8765/headers/?locale=es">Français </a> </li>
-                                      <li><a href="http://localhost:8765/headers/?locale=en_US">English </a> </li>
-                                         <li><a href="http://localhost:8765/headers/?locale=vi_VN">tiengviet</a> </li>
+                                        <li> <a href="http://localhost:8765/homes/home/?locale=es">Français </a> </li>
+                                      <li><a href="http://localhost:8765/homes/home/?locale=en_US">English </a> </li>
+                                         <li><a href="http://localhost:8765/homes/home/?locale=vi_VN">tiengviet</a> </li>
                                     </div>
                                     <div class="ul">
                                         <li> Deutsch</li>
