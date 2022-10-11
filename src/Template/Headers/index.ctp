@@ -58,7 +58,7 @@ $cakeDescription = 'zogravity';
                                         <div class="l"><a href="#"><?= __('À PROPOS') ?></a></div>
                                         <div class="l"><a href="#"><?= __('CONTACT') ?></a></div>
                                         <div class="l"><a href="#"><?= __('BLOG') ?></a></div>
-                                        <div class="l"><a href="http://localhost:8765/users/login"><?= __('LOGIN') ?></a>
+                                        <!-- <div class="l"><a href="http://localhost:8765/users/login"><?= __('LOGIN') ?></a> -->
 
 
                                         </div>
@@ -312,7 +312,7 @@ $cakeDescription = 'zogravity';
                         </div>
                     </div>
                     <div class="conten_nos4">
-                        <div class="conten_nos4_img"></div>
+
                         <div class="conten_nos4_caption"><?= $article[2]['title'] ?></div>
 
                         <div class="conten_nos4_time">
@@ -324,7 +324,7 @@ $cakeDescription = 'zogravity';
                     </div>
 
                     <div class="conten_nos3">
-                        <div class="conten_nos3_img"></div>
+                      
                         <div class="conten_nos3_caption"><?= $article[3]['title'] ?></div>
 
                         <div class="conten_nos3_time">
