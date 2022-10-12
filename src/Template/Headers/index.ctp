@@ -126,7 +126,7 @@ $cakeDescription = 'zogravity';
 
         <?php endforeach; ?>
 
-                            <div class="slide_box1"></div>
+                           
                             <div class="slider_content">
                                 <div class="slider_titel"><p><?=$pre[0]['title_pres'] ?></p>
                                     <div class="next_pre">
@@ -140,7 +140,7 @@ $cakeDescription = 'zogravity';
                                         <div class="note"><a href="" style="color:#000";><?= $pre[0]['author']?></a><br><a><?= $pre[0]['dress']?></a></div>
                                         <div class="cycle"><a href="<?= $pre[0]['link']?>" style="color:#000";><?=__('Lire l’article')  ?>   <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
                                     </div>
-                                    <div class="slide_box2"></div>
+
 
 
              </div>
@@ -157,7 +157,7 @@ $cakeDescription = 'zogravity';
 
 
 
-            <div class="slide_box1"></div>
+
             <div class="slider_content">
                 <div class="slider_titel"><p><?=$pre[1]['title_pres']?></p>
                     <div class="next_pre">
@@ -171,7 +171,7 @@ $cakeDescription = 'zogravity';
                         <div class="note"><a href="" style="color:#000";><?= $pre[1]['author']?></a><br><a><?= $pre[1]['dress']?></a></div>
                                         <div class="cycle"><a href="<?= $pre[1]['link']?>" style="color:#000";><?=__('Lire l’article')?><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
                      </div>
-                     <div class="slide_box2"></div>
+
             </div>
 
 
@@ -202,7 +202,7 @@ $cakeDescription = 'zogravity';
                         <div class="note"><a href="" style="color:#000";><?= $pre[2]['author']?></a><br><a><?= $pre[2]['dress']?></a></div>
                                         <div class="cycle"><a href="<?= $pre[2]['link']?>" style="color:#000";><?=__('Lire l’article')?><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
                      </div>
-                     <div class="slide_box2"></div>
+
             </div>
 
 
@@ -324,7 +324,7 @@ $cakeDescription = 'zogravity';
                     </div>
 
                     <div class="conten_nos3">
-                      
+
                         <div class="conten_nos3_caption"><?= $article[3]['title'] ?></div>
 
                         <div class="conten_nos3_time">
