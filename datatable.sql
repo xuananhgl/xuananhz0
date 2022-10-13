@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 08, 2022 lúc 02:04 AM
+-- Thời gian đã tạo: Th10 13, 2022 lúc 12:03 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -43,10 +43,11 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id_article`, `title`, `body`, `img`, `about`, `link`, `created`, `modified`) VALUES
-(17, 'Comment choisir votre logiciel de gestion de projet', 'Bien choisir son logiciel de gestion de projet ou son outil de gestion de projet est une question cruciale pour les entreprises.', 'https://i.pinimg.com/originals/a0/7b/48/a07b48ca35d9ca59ce0b4464a250a9d0.jpg', 'ENTREPRISES', '', NULL, NULL),
-(18, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'z0 Gravity est un logiciel de gestion de projet développé avec et pour des collectivités territoriales. Grâce à son interface simple et son tableau de bord embarqué, ce logiciel de gestion de projet secteur public permet de répondre efficacement aux contraintes de temps et de budget des collectivités territoriales.\r\n', 'https://i.pinimg.com/originals/2c/c0/fb/2cc0fb6386f33c6f7e7e25090821fc40.jpg', 'SECTEUR PUBLIC', '', NULL, NULL),
-(19, 'Logiciel de gestion de projet en ligne SaaS ', 'La gestion d’un projet implique en réalité de réaliser une succession de tâches très différentes pour l’entreprise et qu’il faut, bien souvent, mener de front : planification, répartition des ressources, des tâches, activités de reporting, suivi de l’avancée des projets, de la consommation des budgets, etc.', 'https://i.pinimg.com/originals/2c/c0/fb/2cc0fb6386f33c6f7e7e25090821fc40.jpg', 'PMO', '', NULL, NULL),
-(20, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://i.pinimg.com/originals/a0/7b/48/a07b48ca35d9ca59ce0b4464a250a9d0.jpg', 'CLIENT', '', NULL, NULL);
+(6, '', NULL, 'sadas', '', '', NULL, NULL),
+(17, '', NULL, 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', '', '', NULL, NULL),
+(18, '', NULL, 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', '', '', NULL, NULL),
+(19, '', NULL, 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', '', '', NULL, NULL),
+(20, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', 'CLIENT', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,48 @@ INSERT INTO `aticles_i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `co
 (308, 'es', 'Articles', 20, 'body', '¿Ha decidido que es hora de invertir en una herramienta de gestión de proyectos para su negocio? ¿Quieres aumentar la productividad y la eficiencia en la gestión del día a día de tu negocio y, al mismo tiempo, beneficiar a todos los departamentos? Esta es una muy buena idea.'),
 (309, 'vi_VN', 'Articles', 20, 'about', 'KHÁCH HÀNG'),
 (310, 'vi_VN', 'Articles', 20, 'title', '7 mẹo chính để trang bị cho mình một công cụ quản lý dự án đúng cách'),
-(311, 'vi_VN', 'Articles', 20, 'body', 'Quyết định đã đến lúc đầu tư vào một công cụ quản lý dự án cho doanh nghiệp của bạn? Bạn có muốn tăng năng suất và hiệu quả trong việc quản lý công việc kinh doanh hàng ngày của mình và đồng thời mang lại lợi ích cho tất cả các phòng ban? Đó là một ý tưởng rất tốt.');
+(311, 'vi_VN', 'Articles', 20, 'body', 'Quyết định đã đến lúc đầu tư vào một công cụ quản lý dự án cho doanh nghiệp của bạn? Bạn có muốn tăng năng suất và hiệu quả trong việc quản lý công việc kinh doanh hàng ngày của mình và đồng thời mang lại lợi ích cho tất cả các phòng ban? Đó là một ý tưởng rất tốt.'),
+(321, 'en_US', 'Articles', 1, 'about', 'aaa'),
+(322, 'en_US', 'Articles', 1, 'title', 'aaa'),
+(323, 'en_US', 'Articles', 1, 'body', 'aaa'),
+(324, 'es', 'Articles', 1, 'about', 'aaa'),
+(325, 'es', 'Articles', 1, 'title', 'aa'),
+(326, 'es', 'Articles', 1, 'body', 'aaaa'),
+(327, 'vi_VN', 'Articles', 1, 'about', 'aaaa'),
+(328, 'vi_VN', 'Articles', 1, 'title', 'aaa'),
+(329, 'vi_VN', 'Articles', 1, 'body', 'aa'),
+(330, 'en_US', 'Articles', 2, 'about', 'cc'),
+(331, 'en_US', 'Articles', 2, 'title', 'ccc'),
+(332, 'en_US', 'Articles', 2, 'body', 'ccc'),
+(333, 'es', 'Articles', 2, 'title', 'cc'),
+(334, 'es', 'Articles', 2, 'body', 'ccccc');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `displays`
+--
+
+CREATE TABLE `displays` (
+  `id` int(11) NOT NULL,
+  `style` varchar(255) NOT NULL,
+  `backgroun_header` varchar(255) NOT NULL,
+  `color_header` varchar(191) NOT NULL,
+  `color_prou` varchar(255) NOT NULL,
+  `image_pour` varchar(255) NOT NULL,
+  `image_header` varchar(191) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `displays`
+--
+
+INSERT INTO `displays` (`id`, `style`, `backgroun_header`, `color_header`, `color_prou`, `image_pour`, `image_header`, `created`, `modified`) VALUES
+(1, 'style9', '#1A9BF7', '#FFFFFF', '', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', '2022-09-09 16:17:40', '2022-09-09 16:17:40'),
+(2, 'style4', '#1A9BF7', '#FFFFFF', '#FFCC99', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', NULL, NULL),
+(4, 'style2', '#1A9BF7', '#FFFFFF', '', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -126,7 +168,7 @@ CREATE TABLE `headers` (
 --
 
 INSERT INTO `headers` (`id_headers`, `about`, `title`, `button`, `video`, `created`, `modified`) VALUES
-(39, 'Avec z0 Gravity, découvrez la simplicité et la performance d’une gestion de projet collaborative.', 'Fédérateur. Personnalisé. Souple & adapté', 'Découvrez z0 Gravity', 'Voir la vidéo.a', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(39, 'Avec z0 Gravity, découvrez la simplicité et la performance d’une gestion de projet collaborative.', 'Fédérateur. Personnalisé. Souple & adapté', 'Découvrez z0 Gravity', 'Voir la vidéo', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -185,40 +227,13 @@ INSERT INTO `i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `content`) 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `interfaces`
---
-
-CREATE TABLE `interfaces` (
-  `id` int(11) NOT NULL,
-  `style` varchar(255) NOT NULL,
-  `backgroun_header` varchar(255) NOT NULL,
-  `color_header` varchar(191) NOT NULL,
-  `color_prou` varchar(255) NOT NULL,
-  `image_pour` varchar(255) NOT NULL,
-  `image_header` varchar(191) NOT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `interfaces`
---
-
-INSERT INTO `interfaces` (`id`, `style`, `backgroun_header`, `color_header`, `color_prou`, `image_pour`, `image_header`, `created`, `modified`) VALUES
-(1, 'style1', '#ccc', '#fff', '#FF7D66', 'https://i.pinimg.com/originals/a0/7b/48/a07b48ca35d9ca59ce0b4464a250a9d0.jpg', 'https://i.pinimg.com/originals/a0/7b/48/a07b48ca35d9ca59ce0b4464a250a9d0.jpg', '2022-09-09 16:17:40', '2022-09-09 16:17:40'),
-(2, 'style4', '#66CCCC', '#777777', '#FFCC99', 'https://i.pinimg.com/564x/d2/a5/bd/d2a5bd7777f540a21f362eb3873c963a.jpg', 'https://i.pinimg.com/564x/6c/84/12/6c84121755cae143e0a4cf4f43fd702b.jpg', NULL, NULL),
-(4, 'style2', '#00CC99', '#777777', '#FFCC99', 'https://i.pinimg.com/564x/d2/a5/bd/d2a5bd7777f540a21f362eb3873c963a.jpg', 'https://i.pinimg.com/564x/d1/08/bc/d108bc26afdf461173c785e40eb0e29d.jpg', NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `posts`
 --
 
 CREATE TABLE `posts` (
   `id_posts` int(100) NOT NULL,
   `article1` int(100) NOT NULL,
-  `article2` int(100) NOT NULL,
+  `article2` varchar(255) COLLATE utf8mb4_unicode_520_nopad_ci NOT NULL,
   `article3` int(100) NOT NULL,
   `article4` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_nopad_ci;
@@ -228,7 +243,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id_posts`, `article1`, `article2`, `article3`, `article4`) VALUES
-(1, 7, 6, 5, 4);
+(1, 6, 'https://jsonplaceholder.typicode.com/posts', 9, 9);
 
 -- --------------------------------------------------------
 
@@ -314,9 +329,9 @@ CREATE TABLE `pres` (
 --
 
 INSERT INTO `pres` (`id`, `title_pres`, `logo`, `about_pres`, `author`, `dress`, `link`, `created`, `modified`) VALUES
-(25, 'PRESSE', 'https://i.pinimg.com/originals/79/11/f0/7911f0511d4c5e568c3e2353c6f2f584.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet546456456456', 'PMO service client Orange Sud-Ouest2', 'https://i.pinimg.com/originals/79/11/f0/7911f0511d4c5e568c3e2353c6f2f584.jpg', '2022-10-07 23:52:50', '0000-00-00 00:00:00'),
-(26, 'PRESSE2', 'https://i.pinimg.com/originals/79/11/f0/7911f0511d4c5e568c3e2353c6f2f584.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet546456456456', 'PMO service client Orange Sud-Ouest2', '', '2022-10-08 06:53:50', '0000-00-00 00:00:00'),
-(27, 'PRESSE3', 'https://i.pinimg.com/originals/79/11/f0/7911f0511d4c5e568c3e2353c6f2f584.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet2', 'PMO service client Orange Sud-Ouest2', '', '2022-10-08 06:53:54', '0000-00-00 00:00:00');
+(25, 'PRESSE1111', 'https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet5', 'PMO service client Orange Sud-Ouest2', 'https://i.pinimg.com/originals/79/11/f0/7911f0511d4c5e568c3e2353c6f2f584.jpg', '2022-10-13 01:04:11', '0000-00-00 00:00:00'),
+(26, '', '', '', '', '', '', '2022-10-13 09:46:26', '0000-00-00 00:00:00'),
+(27, '', '', '', '', '', '', '2022-10-13 09:46:26', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -376,17 +391,18 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
   `created` timestamp NULL DEFAULT NULL,
-  `modified` timestamp NULL DEFAULT NULL,
-  `role` int(100) NOT NULL
+  `modified` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `created`, `modified`, `role`) VALUES
-(9, 'abc@gmail.com', '$2y$10$fBu9pNjhWJEzJrna9CQznugL3W9XFzwxSgbJdjPEDp1ehpLC.RKiG', '2022-09-08 16:53:11', '2022-09-08 16:53:11', 0);
+INSERT INTO `users` (`id`, `email`, `password`, `role`, `created`, `modified`) VALUES
+(9, 'abc@gmail.com', '$2y$10$fBu9pNjhWJEzJrna9CQznugL3W9XFzwxSgbJdjPEDp1ehpLC.RKiG', 'author', '2022-09-08 16:53:11', '2022-10-12 07:44:40'),
+(12, '123@gmail.com', '$2y$10$Qd4155eHWvO9BolRUFYn2eTEAJGsgfO8NXX/eOc0ODeMJqBAEotVS', 'admin', '2022-10-12 07:40:52', '2022-10-12 07:40:52');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -407,6 +423,13 @@ ALTER TABLE `aticles_i18n`
   ADD KEY `ARTICLES_I18N_FIELD` (`model`,`foreign_key`,`field`);
 
 --
+-- Chỉ mục cho bảng `displays`
+--
+ALTER TABLE `displays`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `style` (`style`);
+
+--
 -- Chỉ mục cho bảng `headers`
 --
 ALTER TABLE `headers`
@@ -419,13 +442,6 @@ ALTER TABLE `i18n`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `I18N_LOCALE_FIELD` (`locale`,`model`,`foreign_key`,`field`),
   ADD KEY `I18N_FIELD` (`model`,`foreign_key`,`field`);
-
---
--- Chỉ mục cho bảng `interfaces`
---
-ALTER TABLE `interfaces`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `style` (`style`);
 
 --
 -- Chỉ mục cho bảng `posts`
@@ -475,13 +491,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT cho bảng `aticles_i18n`
 --
 ALTER TABLE `aticles_i18n`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=344;
 
 --
 -- AUTO_INCREMENT cho bảng `headers`
@@ -494,12 +510,6 @@ ALTER TABLE `headers`
 --
 ALTER TABLE `i18n`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
-
---
--- AUTO_INCREMENT cho bảng `interfaces`
---
-ALTER TABLE `interfaces`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `pours`
@@ -529,7 +539,7 @@ ALTER TABLE `pres_i18n`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
