@@ -21,6 +21,7 @@
          display: block;
 
      }
+
     #main{
         /* position: relative; */
 
@@ -83,12 +84,7 @@
     .none{
         display: none;
     }
-    /* .list_menu img{
-        display: none;
-    }
-    .list_menu:nth-child(6){
-        display: none;
-    } */
+
     .list_menu a{
         text-decoration: none;
     }
@@ -100,27 +96,11 @@
      /* background-color: aqua; */
     }
 
+
     #lider{
         height: 1118px;
     }
-    .br_toi{
-        background-color:#041839 ;
-    }
-    .font_white{
-        color: #fff;
-    }
-    .font_blue{
-        color:  #041839;
-    }
-    .br_blue{
-        background-color: #1A9BF7;
-    }
-    #dd{
-        width: 500px;
-        font-size: 50px;
-        line-height: 70px;
 
-    }
     .form5{
       left: 1355px;
     position: relative;
@@ -176,18 +156,6 @@
         height: 251px;
     }
 
-
-
-    }
-
-
-    .container_about{
-
-
-
-     }
-
-
      .container_button{
          margin-bottom: 20px;
          justify-content: center;
@@ -200,12 +168,8 @@
          display: flex;
          border-radius: 50px;
          text-decoration: none;
-
-
      }
-
-
-     .container_item{
+  .container_item{
         display: flex;
         align-items: center;
         gap: 20px;
@@ -275,24 +239,7 @@
         padding-top: 30px;
          text-align: left;
         font: normal normal medium 18px/38px
-
-
-
-
     }
-
-
-
-    .slider_about{
-
-
-
-
-
-
-    }
-
-
     .slider_h1{
         color: #33629A;
         width: 27px;
@@ -347,6 +294,15 @@
         display: flex;
         border-radius: 50px;
         color:#000;
+    }
+    #link{
+        width: 300px;
+        position: absolute;
+        top: 387px;
+        left: 523px;
+    }
+    #logo{
+        position: absolute;
     }
     .slider_next:hover{
          background-color: #CCC;
