@@ -32,7 +32,7 @@
     src: url('../font/Poppins-SemiBold.otf');
       }
     body{
-        width: 1140px;
+        width: 1200px;
          padding: auto;
          margin: auto;
          font-family: Poppins-Regular;
@@ -60,17 +60,25 @@
     .image1 {
     width: 90px;
     height: auto;
-
-
 }
   .a{
     position: absolute;
-    top: 100px;
-    left: -360px;
-      height: 400px;
-      width: 300px;
-      display: none;
+    top: 76px;
+    left: -335px;
+    height: 400px;
+    width: 300px;
+    display: none;
     }
+    #head{
+      width: 150px;
+      padding: 0px;
+
+    }
+    #save{
+    position: fixed;
+    top: 30px;
+    right: 100px;
+      }
     .gmail{
       width: 300px;
       height: 50px;
@@ -84,29 +92,26 @@
       background: #fff;
       border: 1px solid #000;
       border-radius: 14px;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
     #icon1{
       font-size: 34px;
       position: absolute;
       left: -350px;
-
     }
-
     #icon2{
       font-size: 20px;
       position: relative;
       top: -36px;
-
     }
-
     #icon3{
       font-size: 34px;
       position: absolute;
-      left: 1300px;
+      right: -200px;
+      top: 50px;
     }
-
     #icon4{
       font-size: 20px;
       position: relative;
@@ -116,7 +121,7 @@
     .down{
       position: absolute;
       top: 100px;
-      left: 1200px;
+      left: 1250px;
       height: 1800px;
 
       width: 300px;
@@ -128,10 +133,9 @@
       background: #fff;
     }
     input{
-
-    border: 0px transparent solid;
     background: transparent;
     margin: 0px;
+    border: none;
 
     }
     textarea{
@@ -149,13 +153,12 @@
     }
     .header_menu{
 
-         display: flex;
-         height: 100px;
-         width: 1024px;
-         margin: auto;
-         justify-content: space-between;
-         align-items: center;
-
+    display: flex;
+    height: 100px;
+    width: 1024px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
     }
     .zg_logo{
 
