@@ -62,17 +62,18 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Headers', 'action' => 'index']);
+    $routes->connect('/', ['controller' => 'Homes', 'action' => 'index']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
-    $routes->connect('headers',['controller'=>'Headers','action'=>'index']);
+    $routes->connect('interfaces',['controller'=>'interfaces','action'=>'home']);
+    $routes->connect('admin',['controller'=>'Users','action'=>'login']);
     $routes->fallbacks();
     Router::scope('/', function (RouteBuilder $routes) {
         // Prior to 3.5.0 use `extensions()`
         $routes->setExtensions(['json']);
-        $routes->resources('Homes');
+        $routes->resources('interfaces');
         $routes->resources('articlesapi');
         $routes->resources('headersapi');
         $routes->resources('posts');
