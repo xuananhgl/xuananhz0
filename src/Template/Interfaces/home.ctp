@@ -62,29 +62,19 @@ $cakeDescription = 'zogravity';
                 <div class="down app">
                   <i class="fa-regular fa-circle-xmark" id="icon4"></i>
 
+                  <div>backgroun_header
 
-                  <p> background </p>
-                  <label>Địa điểm：
-                      <select class="address" name="backgroun_header">
-                      <option style="background-color: <?= $display['backgroun_header'] ?>;" value="<?= $display['backgroun_header'] ?>">background</option>
-                      <option style="background-color: #000;" value="#000"></option>
-                      <option style="background-color: #fff;" value="#FFF"></option>
-                      <option style="background-color: #ccc;" value="#ccc"></option>
-                      <option style="background-color: #AA0000;" value="#AA0000"></option>
-                      <option style="background-color: #777777;" value="#777777"></option>
-                      <option style="background-color: #EEEEEE;" value="#EEEEEE"></option>
-                      <option style="background-color: #AAAAAA;" value="#AAAAAA"></option>
-                      </select>
-                  </label>
-                    <p>text color</p>
-                    <label>
-                      <form>
-                      <input type="color" name="favcolor" value="<?= $display['color_header'] ?>">
-                      <input type="submit">
-                      </form>
-                    </label>
-                
-                    <p>image headers</p>
+                <input type="color" id="head" name="backgroun_header" value="<?= $display['backgroun_header'] ?>">
+
+                  </div>
+                  <div>text color
+
+                <input type="color" id="head" name="color_header" value="<?= $display['color_header'] ?>">
+
+                  </div>
+
+
+
                   <label>
                       <select class="address" name="image_header">
                       <option value="<?= $display['image_header'] ?>"><?= $display['image_header'] ?></option>
@@ -103,12 +93,7 @@ $cakeDescription = 'zogravity';
                       </select>
                   </label>
                     <p>color prou</p>
-                  <label>
-                    <form>
-                    <input type="color" name="favcolor" value="<?= $display['backgroun_header'] ?>">
-                    <input type="submit">
-                    </form>
-                  </label>
+
                   <i class="fa-solid fa-images" id="image2"></i>
                   <div class="image" id="image">
                   <div class="imager">
@@ -587,7 +572,7 @@ $cakeDescription = 'zogravity';
 
                         <div>
 
-                          <?= $this->Form->button(__('Save '));?>
+                          <?= $this->Form->button(__('Save '), ['id'=>'save']);?>
                           <?= $this->Form->end();?>
         <?= $this->Html->script('changer.js') ?>
 </body>
