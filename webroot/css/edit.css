@@ -110,16 +110,54 @@
       justify-content: center;
       align-items: center;
     }
-    #icon1{
-      font-size: 34px;
+    .edit_bar{
       position: absolute;
-      left: -350px;
+      top: 100px;
+      left: 450px;
+      width: 100px;
+
     }
-    #icon2{
-      font-size: 20px;
-      position: relative;
-      top: -36px;
+    #entreprises, #propos, #contact, #blog{
+      max-width: 120px;
+      background: transparent;
+      border: none;
     }
+  #secteur{
+       max-width: 150px;
+       background: transparent;
+       border: none;
+     }
+  .edit_bar>input{
+    width: 200px;
+  }
+  .edit_bar.open{
+    display: block;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+    .dropdown>img{
+      height: 120px;
+    }
+
+  .dropdown-content {
+    display: none;
+    border-radius: 5px;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+    .dropdown-content>input{
+      background: #f9f9f9;
+    }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
     #icon3{
       font-size: 18px;
       position: fixed;
@@ -235,6 +273,9 @@
     label{
       font-size: 0px;
     }
+    #about{
+      background: transparent;
+    }
     #title{
       font-size: 60px;
       background: transparent;
@@ -265,7 +306,7 @@
 
     }
     .header_menu i{
-        display: none;
+
     }
 
     .list_menu{
@@ -303,7 +344,20 @@
     align-items: center;
      /* background-color: aqua; */
     }
-
+    /* .over_headers{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background: #ccc;
+      display: none;
+    }
+    .border_headers{
+      margin: auto;
+      width: 1137px;
+      padding-top: 100px;
+    } */
     #lider{
     height: 1110px;
     }
@@ -474,6 +528,18 @@
         justify-content: space-between;
         align-items: center;
     }
+    /* .over_slider{
+      width: 100%;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background: #3c3838cc;
+      padding-top: 18%;
+      display: none;
+    } */
+    }
     .slider1{
         border: #000 2px solid;
         width: 1571px;
@@ -543,13 +609,8 @@
         margin-top: 45px;
     }
 
-    .slider_h1{
-        color: #33629A;
-        width: 220px;
-        height: 80px;
-        background:  0% 0% no-repeat padding-box;
-        opacity: 1;
-        overflow: hidden;
+    .logo1{
+      height: 85px;
 
     }
     .slider_h1>img{
@@ -573,11 +634,37 @@
     .note a{
         color: #BEBEBE;
     }
+    .sliderdrop {
+      position: relative;
+      display: inline-block;
+    }
+
+
+    .sliderdrop-content {
+      display: none;
+      border-radius: 5px;
+      position: absolute;
+
+      left: -200px;
+      background-color: transparent;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+      .sliderdrop-content>input{
+        background: #f9f9f9;
+      }
+
+    .sliderdrop:hover .sliderdrop-content {
+      display: block;
+    }
+
     .cycle{
         width: 200px;
         height: 25px;
         position: relative;
-        top: 80px;
+        top: 110px;
         left: 175px;
         text-align: right;
         font: normal normal medium 18px/27px Poppins;
