@@ -39,6 +39,7 @@
      <?= $this->Form->control('style');?>
      <?= $this->Form->control('backgroun_header');?>
       <?= $this->Form->control('color_header');?>
+      <?= $this->Form->control('color_button');?>
        <?= $this->Form->control('image_header');?>
        <?= $this->Form->control('color_pour');?>
         <?= $this->Form->control('color_button');?>

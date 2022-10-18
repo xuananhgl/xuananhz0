@@ -39,6 +39,11 @@
       <?=  $this->Form->input('SECTEUR');?>
       <?=  $this->Form->input('PROPOS');?>
       <?=  $this->Form->input('BLOG');?>
+      <?=  $this->Form->control('link_ENTREPRISES');?>
+      <?=  $this->Form->input('link_CONTACT');?>
+      <?=  $this->Form->input('link_SECTEUR');?>
+      <?=  $this->Form->input('link_PROPOS');?>
+      <?=  $this->Form->input('link_BLOG');?>
            <legend class="English">English</legend>
       <?= $this->Form->control('_translations.en_US.ENTREPRISES'); ?>
       <?= $this->Form->control('_translations.en_US.SECTEUR'); ?>
@@ -51,7 +56,7 @@
       <?= $this->Form->control('_translations.es.PROPOS'); ?>
       <?= $this->Form->control('_translations.es.CONTACT'); ?>
       <?= $this->Form->control('_translations.es.BLOG'); ?>
-    
+
 
                 <legend legend>Tieng-VIet</legend>
     <?= $this->Form->control('_translations.vi_VN.ENTREPRISES'); ?>
