@@ -2,7 +2,8 @@
 <?php foreach ($displays as $display): ?>
 <?php foreach ($bars as $bar): ?>
 <?php foreach ($pours as $pour): ?>
-<?php foreach ($headers as $header): ?>
+
+<?php foreach ($posts as $post): ?>
 <?php
 $cakeDescription = 'zogravity';
 ?>
@@ -113,6 +114,10 @@ $cakeDescription = 'zogravity';
                                     </div>
                                 <div class="top">
                                   <i class="fa-solid fa-pen" id="js_open_header"></i>
+                              <?=$pre->translation('vi_VN')->author?>
+                                <?=$article1->translation('vi_VN')->about?>
+                              <?=  debug($header->translation('vi_VN')->title);?>
+
                                      <div class="header_container" >
 
 
@@ -310,6 +315,9 @@ $cakeDescription = 'zogravity';
                             </div>
 
 
+
+
+
                             <div class="news_nos">
                                 <div class="nos_title"><h1><?= __('Nos articles') ?></h1></div>
                                 <div class="new">
@@ -319,48 +327,48 @@ $cakeDescription = 'zogravity';
                                 </div>
                                 <div class="nos_content">
                                     <div class="conten_nos1">
-                                        <div class="conten_nos1_img"><?= $this->Html->image($article[0]['img']) ?></div>
-                                        <div class="conten_nos1_caption"><?= $article[0]['title'] ?></div>
+                                        <div class="conten_nos1_img"><?= $this->Html->image($article[$post->article1]['img']) ?></div>
+                                        <div class="conten_nos1_caption"><?= $article[$post->article1 - 1]['title'] ?></div>
 
                                         <div class="conten_nos1_time">
-                                            <div class="conten_nos1_note"><?= $article[0]['about']?></div>15 min
+                                            <div class="conten_nos1_note"><?= $article[$post->article1 - 1]['about']?></div>15 min
                                         </div>
-                                        <div class="conten_nos1_about"><?= $article[0]['body'] ?></div>
-                                        <div class="conten1 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
+                                        <div class="conten_nos1_about"><?= $article[$post->article1 - 1]['body'] ?></div>
+                                        <div class="conten1 nos_btn"><a href="<?= $article[$post->article1 - 1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                     </div>
                                     <div class="conten_nos2">
-                                        <div class="conten_nos2_img"><?= $this->Html->image( $article[1]['img'] ) ?></div>
+                                        <div class="conten_nos2_img"><?= $this->Html->image( $article[$post->article2 - 1]['img'] ) ?></div>
                                         <div class="conten_nos2_char">
-                                            <div class="conten_nos2_caption"><?= $article[1]['title'] ?></div>
+                                            <div class="conten_nos2_caption"><?= $article[$post->article2 - 1]['title'] ?></div>
 
                                             <div class="conten_nos2_time">
-                                                <div class="conten_nos2_note"><?= $article[1]['about'] ?></div>10 min
+                                                <div class="conten_nos2_note"><?= $article[$post->article2 - 1]['about'] ?></div>10 min
                                             </div>
-                                            <div class="conten_nos2_about"><?= $article[1]['body'] ?></div>
-                                            <div class="conten2 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
+                                            <div class="conten_nos2_about"><?= $article[$post->article2 - 1]['body'] ?></div>
+                                            <div class="conten2 nos_btn"><a href="<?= $article[$post->article2 - 1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                         </div>
                                     </div>
                                     <div class="conten_nos4">
 
-                                        <div class="conten_nos4_caption"><?= $article[2]['title'] ?></div>
+                                        <div class="conten_nos4_caption"><?= $article[$post->article3 - 1]['title'] ?></div>
 
                                         <div class="conten_nos4_time">
-                                            <div class="conten_nos4_note"><?= $article[2]['about'] ?></div>8 min
+                                            <div class="conten_nos4_note"><?= $article[$post->article3 - 1]['about'] ?></div>8 min
 
                                         </div>
-                                        <div class="conten_nos4_about"><?= $article[2]['body'] ?></div>
-                                        <div class="conten4 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
+                                        <div class="conten_nos4_about"><?= $article[$post->article3 - 1]['body'] ?></div>
+                                        <div class="conten4 nos_btn"><a href="<?= $article[$post->article3 - 1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                     </div>
 
                                     <div class="conten_nos3">
 
-                                        <div class="conten_nos3_caption"><?= $article[3]['title'] ?></div>
+                                        <div class="conten_nos3_caption"><?= $article[$post->article4 - 1]['title'] ?></div>
 
                                         <div class="conten_nos3_time">
-                                            <div class="conten_nos3_note"><?= $article[3]['about'] ?></div>12 min
+                                            <div class="conten_nos3_note"><?= $article[$post->article4 - 1]['about'] ?></div>12 min
                                         </div>
-                                        <div class="conten_nos3_about"><?= $article[3]['body'] ?></div>
-                                        <div class="conten3 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
+                                        <div class="conten_nos3_about"><?= $article[$post->article4 - 1]['body'] ?></div>
+                                        <div class="conten3 nos_btn"><a href="<?= $article[$post->article4 - 1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                     </div>
                                 </div>
                                 <div class="button_content1 button"><a href=""><?= __('Voir tous les articles') ?></a></div>
@@ -597,11 +605,11 @@ $cakeDescription = 'zogravity';
                                                            const  openVi = document.getElementById('js_open_vi')
                                                            const openEn = document.getElementById('js_open_es')
                                                            const formVi = document.getElementById('vi-author')
-                                                          const  formFr = document.getElementById('title')
+                                                           const  formFr = document.getElementById('title')
                                                            console.log(openVi);
                                                            console.log(openEn);
                                                            console.log(formVi);
-                                                          console.log(formFr);
+                                                           console.log(formFr);
                                                            function showVi(){
                                                              formVi.classList.add('open')
                                                             formFr.classList.add('close')
@@ -935,9 +943,14 @@ $cakeDescription = 'zogravity';
                                       </div>
                                       <div class="over_Article">
 
+
+
+
+
                                         <div class="boder_Article">
                                       <div class="nos_content">
                                           <div class="conten_nos1">
+                                              <?=  $this->Form->control('article1', ['value'=>$post->article1, 'title'=>'nhap so thu tu de dieu kien vi tri bai viet']);?>
                                               <div class="conten_nos1_img"><?= $this->Html->image($article[0]['img']) ?></div>
                                               <div class="conten_nos1_caption"><?= $this->Form->control('title1', ['value' => $article[0]['title'], 'rows'=>'1']);?></div>
                                               <div class="conten_nos1_time">
@@ -949,9 +962,10 @@ $cakeDescription = 'zogravity';
                                               <div  style="display:none"><?= $this->Form->control('link1', ['value' => $article[0]['link']]);?></div>
                                           </div>
                                           <div class="conten_nos2">
+                                              <?=  $this->Form->control('article2', ['value'=>$post->article2]);?>
                                               <div class="conten_nos2_img"><?= $this->Html->image( $article[1]['img'] ) ?></div>
                                               <div class="conten_nos2_char">
-                                                  <div class="conten_nos2_caption"><?= $this->Form->control('title2', ['value' => $article[3]['title'], 'rows'=>'1']);?></div>
+                                                  <div class="conten_nos2_caption"><?= $this->Form->control('title2', ['value' => $article[1]['title'], 'rows'=>'1']);?></div>
 
 
                                                   <div class="conten_nos2_time">
@@ -964,6 +978,7 @@ $cakeDescription = 'zogravity';
                                               </div>
                                           </div>
                                           <div class="conten_nos4">
+                                            <?=  $this->Form->control('article3', ['value'=>$post->article3]);?>
                                               <div class="conten_nos4_img"></div>
                                               <div class="conten_nos4_caption"><?= $this->Form->control('title3', ['value' => $article[2]['title'], 'rows'=>'1']);?></div>
 
@@ -979,6 +994,7 @@ $cakeDescription = 'zogravity';
                                           </div>
 
                                           <div class="conten_nos3">
+                                              <?=  $this->Form->control('article4', ['value'=>$post->article4]);?>
                                               <div class="conten_nos3_img"></div>
                                               <div class="conten_nos3_caption"><?= $this->Form->control('title4', ['value' => $article[3]['title'], 'rows'=>'1']);?></div>
 
@@ -999,7 +1015,7 @@ $cakeDescription = 'zogravity';
 
                                         <i class="fa-solid fa-circle-xmark" id="js_close_article"></i>
 
-                                      <button type="submit" name="button" id="save_articles"><i class="fa-solid fa-check"></i></button>
+                                      <button type="submit" name="button" id="save_articles">save</i></button>
 
                                     </div>
                                     <script>
@@ -1114,6 +1130,7 @@ $cakeDescription = 'zogravity';
               <?= $this->Html->script('changer.js') ?>
 </body>
 </html>
+
 <?php endforeach; ?>
 <?php endforeach; ?>
 <?php endforeach; ?>
