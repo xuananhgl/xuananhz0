@@ -2,7 +2,7 @@
 <?php foreach ($displays as $display): ?>
 <?php foreach ($bars as $bar): ?>
 <?php foreach ($pours as $pour): ?>
-<?php foreach ($headers as $header): ?>
+
 <?php foreach ($posts as $post): ?>
 <?php
 $cakeDescription = 'zogravity';
@@ -114,9 +114,6 @@ $cakeDescription = 'zogravity';
                                     </div>
                                 <div class="top">
                                   <i class="fa-solid fa-pen" id="js_open_header"></i>
-                              <?=$pre->translation('vi_VN')->author?>
-                                <?=$article1->translation('vi_VN')->about?>
-                              <?=  debug($header->translation('vi_VN')->title);?>
 
                                      <div class="header_container" >
 
@@ -540,19 +537,14 @@ $cakeDescription = 'zogravity';
                           </div>
 
 
-      <style>
-        #title, #about, #video{
-          color:<?= $display['color_header'] ?>;
 
-      }
-      </style>
                       <!-- ====================================================================================================================== -->
 
 
 
 
 
-                          <div id="lider" style="background-color:<?= $display['backgroun_header'] ?>">
+
                             <div class="over_headers">
                               <div class="border_headers" style="background-color:<?= $display['backgroun_header'] ?>;">
 
@@ -571,6 +563,7 @@ $cakeDescription = 'zogravity';
                                         <i class="fa-solid fa-circle-xmark" id="js_close_header"></i>
                                         <i class="fa-solid fa-flag-usa"id="js_open_es"></i>
                                         <i class="fa-brands fa-vimeo"id="js_open_vi"></i>
+                                        <i class="fa-solid fa-franc-sign" id="js_open_fr"></i>
                                            <div class="header_container" >
 
 
@@ -584,13 +577,14 @@ $cakeDescription = 'zogravity';
                                                       <div class="container_title">
                                                               <h1 class="font_blue" style="color: <?= $display['color_header'] ?>;">
                                                                 <?= $this->Form->control('title', ['rows'=>'3', 'color'=> $display['title'], 'value'=> $header['title']]);?>
-                                                                <?= $this->Form->control('vi_author',['rows'=>'3', 'color'=> $display['title'], 'value'=>$pre->translation('vi_VN')->author]);?>
-                                                                <?= $this->Form->control('en_author',['rows'=>'3', 'color'=> $display['title'], 'value'=>$pre->translation('en_US')->author]);?>
+                                                                <?= $this->Form->control('vi_title',['rows'=>'3', 'color'=> $display['title'], 'value'=>$header->translation('vi_VN')->title]);?>
+                                                                <?= $this->Form->control('en_title',['rows'=>'3', 'color'=> $display['title'], 'value'=>$header->translation('en_US')->title]);?>
                                                               </h1>
-
-
                                                       <div class="container_about" style="color: <?= $display['color_header'] ?>;">
                                                           <?= $this->Form->control('about', ['rows'=>'3', 'value'=> $header['about']]);?>
+                                                          <?= $this->Form->control('about', ['rows'=>'3', 'value'=> $header['about']]);?>
+                                                          <?= $this->Form->control('vi_about',['rows'=>'3','value'=>$header->translation('vi_VN')->about]);?>
+                                                          <?= $this->Form->control('en_about',['rows'=>'3','value'=>$header->translation('en_US')->about]);?>
                                                       </div>
                                                       <div class="container_button" style="color: <?= $display['color_header'] ?>; background:<?= $display['color_button'] ?>;">
                                                            <?= $this->Form->control('button', ['value'=> $header['button']]);?>
@@ -604,21 +598,28 @@ $cakeDescription = 'zogravity';
                                                   <script>
                                                            const  openVi = document.getElementById('js_open_vi')
                                                            const openEn = document.getElementById('js_open_es')
-                                                           const formVi = document.getElementById('vi-author')
+                                                           const  openFr = document.getElementById('js_open_fr')
+                                                           const formVi = document.getElementById('vi-title')
+                                                            const formEn = document.getElementById('en-title')
                                                            const  formFr = document.getElementById('title')
-                                                           console.log(openVi);
-                                                           console.log(openEn);
+                                                           console.log(openFr);
+                                                           console.log(formEn);
                                                            console.log(formVi);
                                                            console.log(formFr);
                                                            function showVi(){
-                                                             formVi.classList.add('open')
+                                                            formVi.classList.add('open')
                                                             formFr.classList.add('close')
                                                            }
                                                            function hideVi(){
                                                              formVi.classList.remove('open')
+                                                             formEn.classList.add('open')
+                                                           }
+                                                           function showFr(){
+                                                               formFr.classList.remove('close')
                                                            }
                                                            openVi.addEventListener('click', showVi)
                                                            openEn .addEventListener('click', hideVi)
+                                                           openFr .addEventListener('click', showFr)
 
                                                   </script>
 
@@ -880,58 +881,7 @@ $cakeDescription = 'zogravity';
 
                       </script>
 
-                      </div>
 
-                           <!-- ========================================================================================================================================    -->
-
-                              <div id="content">
-                                  <div class="content_pfc">
-                                      <div class="content_pfc_titel"><?= $pour['logo'] ?></div>
-                                      <div class="content_pfc_text">
-                                      <h4 style="color:#fff";> <?= $pour['title'] ?>  </h4></div>
-                                  </div>
-                                  <div class="content_layout">
-                                      <div class="content_layot_text">
-                                          <div class="fr"><h1 style="color:#fff"><?= $pour['Notre_engagement'] ?></h1></div>
-                                          <div class="p"><p><?= $pour['about_notre'] ?></p></div>
-                                          <div class="last"><h1><?= $pour['note'] ?></h1></div>
-                                      </div>
-                                      <div class="content_layout_inset"><?= $this->Html->image('mo.png') ?></div>
-                                      <div class="content_layot_img"><?= $this->Html->image($display['image_pour']) ?></div>
-                                  </div>
-                                  <div class="content_about">
-                                      <div class="content_about_title"><?=__('Découvrez l’univers z0 Gravity')  ?></div>
-                                      <div class="content_about_text"><?=__('Plannings, budgets, calendriers…En un clin dœil, vous avez une vision globale et stratégique de lavancée de vos projets en temps réel !') ?>
-                                      </div>
-                                      <div class="conteant_about_button"><i class="fa-solid fa-play"></i> <a href="<?= $pour['link'] ?>"><?=__('Présentation')?> vidéo </a></div>
-                                  </div>
-                                  <div class="content_app">
-                                  <?= $this->Html->image('app.jpg') ?>
-                                  </div>
-
-                              </div>
-                              <div id="news">
-                                  <div class="news1">
-                                      <div class="news_vous_title"><?= __('Vous êtes…') ?></div>
-                                      <div class="news_vous">
-
-                                          <div class="news_vous_go">
-                                              <div class="vous_go_item"><i class="fa-solid fa-file-signature" style="color:#049BF7 ;"></i></div>
-                                              <div class="vous_go_about"><h2><?= __('Une entreprise') ?></h2><p> <?= __('Jouez collectif fédérez vos équipes autour dun objectif commun.') ?></p></div>
-                                              <div class="vous_go_button"><a href="" style="color: #fff; text-decoration: none;"><?= __('3,2,1… Go !') ?></a></div>
-                                          </div>
-                                          <div class="news_vous_comment">
-                                              <div class="vous_comment_item"><i class="fa-solid fa-hospital" style="color:#FF7D66 ;"></i></div>
-                                              <div class="vous_comment_about"><h2><?= __('Une collectivité') ?></h2><p><?= __('Rassemblez les acteurs de <br>votre projet via un logiciel commun !') ?></p></div>
-                                              <div class="vous_comment_button"><a href="" style="color: #fff; text-decoration: none;"><?= __('Découvrez comment') ?></a></div>
-                                          </div>
-                                          <div class="news_vous_commemcons">
-                                              <div class="vous_commemcons_item"><i class="fa-solid fa-map-location-dot" style="color:#FFD051 ;"></i></div>
-                                              <div class="vous_commemcons_about"><h2><?= __('Un promeneur') ?></h2><p><?= __('égaré Bienvenue !<br> Installez-vous et laissez-vous guider.') ?></p></div>
-                                              <div class="vous_commemcons_button"><a href="" style="color: #fff; text-decoration: none;"><?= __('Commençons par ici') ?></a></div>
-                                          </div>
-                                      </div>
-                                  </div>
 
 
 
@@ -1049,88 +999,14 @@ $cakeDescription = 'zogravity';
 
                               </div>
                               </div>
-                          <div id="footer">
-                              <div class="bottom"
-                                  <div class="footer_menu">
-                                      <div class="footer_logo">
-                                          <div class="logo_img"><img src="https://www.z0gravity.com/storage-z0G/2019/05/z0_Gravity_Logo_BlancBleu-1.svg" alt=""></div>
-                                          <div class="logo_slogan"><?= __('Ensemble, on va plus loin.') ?></div>
-                                      </div>
-                                      <div class="footer_list">
-                                          <ul>
-                                              <li><?= __('Entreprises') ?></li>
-                                              <li><?= __('Collectivités') ?></li>
-                                              <li><?= __('À PROPOS') ?></li>
-                                              <li><?= __('CONTACT') ?></li>
-                                              <li><?= __('BLOG') ?></li>
-                                          </ul>
-                                      </div>
-                                      <div class="footr_infor">
-                                          <div class="infor_img">
-                                              <div class="information"><?= __('SUIVEZ-NOUS') ?></div>
-                                              <div class="img_info">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                                <i class="fa-brands fa-twitter"></i>
-                                                <i class="fa-brands fa-vimeo-v"></i>
-                                              </div>
-                                          </div>
-                                          <div class="js-open-model" > <i class="fa-solid fa-earth-asia"> </i><?= __('changer de région') ?></div>
-                                      </div>
-                                  </div>
-                                  <div class="footer_last">
-                                          <a><?= __('© 2019 Globalsi SAS') ?></a>
-                                           <a><?= __('Plan du site') ?></a>
-                                          <a><?= __('Contactez-nous') ?></a>
-                                          <a><?= __('Mentions légale') ?></a>
-                                  </div>
-                              </div>
-                          </div>
-
-                              <div class="model js-model">
-                                  <div class="set_changer">
-                                      <div class="chenger_tille">
-                                          <h2><?= __('Change Language') ?></h2>
-                                          <i class="fa-solid fa-xmark js-close-model" style="cursor: pointer;"></i>
-                                      </div>
-                                      <div class="chenger_about">
-                                          <?= __('Si vous sélectionnez une autre région, la langue et le contenu de z0gravity.com changeront.') ?>
-                                      </div>
-                                      <div class="langue">
-                                          <ul>
-                                          <div class="ul">
-                                              <li> <a href="http://localhost:8765/interfaces/home/?locale=es">Français </a> </li>
-                                            <li><a href="http://localhost:8765/interfaces/home/?locale=en_US">English </a> </li>
-                                               <li><a href="http://localhost:8765/interfaces/home/?locale=vi_VN">tiengviet</a> </li>
-                                          </div>
-                                          <div class="ul">
-                                              <li> Deutsch</li>
-                                              <li>Nederlands</li>
-                                              <li>Polski </li>
-                                          </div>
-                                          <div class="ul">
-                                              <li>Русский</li>
-                                              <li>Bokmål</li>
-                                              <li>Ελληνικά </li>
-                                          </div>
-                                          <div class="ul">
-                                              <li>Português </li>
-                                              <li>日本語</li>
-                                              <li>繁體中文</li>
-                                          </div>
-                                          </ul>
-                                      </div>
-                                  </div>
-                                </div>
 
 
-                              <div>
 
-                                <?= $this->Form->button(__('Save '), ['id'=>'save']);?>
                                 <?= $this->Form->end();?>
               <?= $this->Html->script('changer.js') ?>
 </body>
 </html>
-<?php endforeach; ?>
+
 <?php endforeach; ?>
 <?php endforeach; ?>
 <?php endforeach; ?>
