@@ -71,10 +71,6 @@ $cakeDescription = 'zogravity';
                                             function hideImage(){
                                               settingImage.classList.remove('open')
                                             }
-                                            console.log(imageOpen);
-                                              console.log(settingImage);
-                                                console.log(imageClose);
-
                                             imageOpen.addEventListener('click', showImage)
                                             imageClose.addEventListener('click', hideImage)
 
@@ -93,7 +89,7 @@ $cakeDescription = 'zogravity';
 
 
 <style>
-  #title, #about, #video{
+  #title, #about, #video, #vi-title, #vi-about, #en-title, #en-about, #conten-button{
     color:<?= $display['color_header'] ?>;
 
 }
@@ -115,6 +111,7 @@ $cakeDescription = 'zogravity';
                                 <div class="top">
                                   <i class="fa-solid fa-pen" id="js_open_header"></i>
 
+
                                      <div class="header_container" >
 
 
@@ -129,7 +126,7 @@ $cakeDescription = 'zogravity';
                                                                                 <p style="color: <?= $display['color_header'] ?>;"><?= $header['about']?></p>
                                                                             </div>
                                                                             <div class="container_button" style="background:<?= $display['color_button'] ?>">
-                                                                                <a href="" style="color: <?= $display['color_header'] ?>;"><?= $header['button']?></a>
+                                                                                <a href="" style="color: <?= $display['color_header'] ?>;"><?= $header['conten_button']?></a>
                                                                             </div>
                                                                             <div class="container_item">
                                                                                  <button class="js-open-video"><i class="fa-solid fa-circle-play"></i><div class="item_vd">
@@ -244,11 +241,6 @@ $cakeDescription = 'zogravity';
                     slider2.classList.add('close')
                     slider3.classList.remove('open')
                 }
-                console.log(next1);
-                  console.log(pre1);
-                  console.log(slider3);
-                console.log(icon7);
-                console.log(iconNext2);
                 iconNext.addEventListener('click', next1)
                 iconNext2.addEventListener('click', pre2)
                 iconNext3.addEventListener('click', pre1)
@@ -324,7 +316,7 @@ $cakeDescription = 'zogravity';
                                 </div>
                                 <div class="nos_content">
                                     <div class="conten_nos1">
-                                        <div class="conten_nos1_img"><?= $this->Html->image($article[$post->article1]['img']) ?></div>
+                                        <div class="conten_nos1_img"><?= $this->Html->image($article[$post->article1-1]['img']) ?></div>
                                         <div class="conten_nos1_caption"><?= $article[$post->article1 - 1]['title'] ?></div>
 
                                         <div class="conten_nos1_time">
@@ -519,9 +511,7 @@ $cakeDescription = 'zogravity';
                                 const  openMenu = document.getElementById('js_open_menu')
                                 const closeMenu = document.getElementById('js_close_menu')
                                 const overMenu = document.querySelector('.over_menu')
-                                console.log(openMenu);
-                                console.log(closeMenu);
-                                console.log(overMenu);
+
                                 function showMenu(){
                                   overMenu.classList.add('open')
                                 }
@@ -561,10 +551,12 @@ $cakeDescription = 'zogravity';
                                           </div>
                                       <div class="top">
                                         <i class="fa-solid fa-circle-xmark" id="js_close_header"></i>
-                                        <i class="fa-solid fa-flag-usa"id="js_open_es"></i>
-                                        <i class="fa-brands fa-vimeo"id="js_open_vi"></i>
-                                        <i class="fa-solid fa-franc-sign" id="js_open_fr"></i>
-                                           <div class="header_container" >
+                                        <div class="Language_header">
+                                        <div class=""id="js_open_es"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/us.png" alt="tieng-Anh"></div>
+                                        <div class=""id="js_open_vi"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/vn.png" alt="TIENG-VIET"></div>
+                                        <div class="" id="js_open_fr"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/fr.png" alt="Tieng-Phap"></div>
+                                        </div>
+                                         <div class="header_container" >
 
 
                                                   <?= $this->Html->image($display->image_header) ?>
@@ -576,18 +568,20 @@ $cakeDescription = 'zogravity';
 
                                                       <div class="container_title">
                                                               <h1 class="font_blue" style="color: <?= $display['color_header'] ?>;">
-                                                                <?= $this->Form->control('title', ['rows'=>'3', 'color'=> $display['title'], 'value'=> $header['title']]);?>
-                                                                <?= $this->Form->control('vi_title',['rows'=>'3', 'color'=> $display['title'], 'value'=>$header->translation('vi_VN')->title]);?>
-                                                                <?= $this->Form->control('en_title',['rows'=>'3', 'color'=> $display['title'], 'value'=>$header->translation('en_US')->title]);?>
+                                                                <?= $this->Form->control('title', ['rows'=>'3', 'value'=> $header['title']]);?>
+                                                                <?= $this->Form->control('vi_title',['rows'=>'3', 'value'=>$header->translation('vi_VN')->title]);?>
+                                                                <?= $this->Form->control('en_title',['rows'=>'3', 'value'=>$header->translation('en_US')->title]);?>
                                                               </h1>
                                                       <div class="container_about" style="color: <?= $display['color_header'] ?>;">
                                                           <?= $this->Form->control('about', ['rows'=>'3', 'value'=> $header['about']]);?>
-                                                          <?= $this->Form->control('about', ['rows'=>'3', 'value'=> $header['about']]);?>
                                                           <?= $this->Form->control('vi_about',['rows'=>'3','value'=>$header->translation('vi_VN')->about]);?>
                                                           <?= $this->Form->control('en_about',['rows'=>'3','value'=>$header->translation('en_US')->about]);?>
+
                                                       </div>
                                                       <div class="container_button" style="color: <?= $display['color_header'] ?>; background:<?= $display['color_button'] ?>;">
-                                                           <?= $this->Form->control('button', ['value'=> $header['button']]);?>
+                                                           <?= $this->Form->control('conten_button', ['value'=> $header['conten_button']]);?>
+                                                           <?= $this->Form->control('vi_button',['rows'=>'3','value'=>$header->translation('vi_VN')->button]);?>
+                                                           <?= $this->Form->control('en_button',['rows'=>'3','value'=>$header->translation('en_US')->button]);?>
                                                       </div>
                                                       <div class="container_item" style="color: <?= $display['color_header'] ?>;">
                                                            <button class="js-open-video"><i class="fa-solid fa-circle-play"></i>
@@ -595,33 +589,7 @@ $cakeDescription = 'zogravity';
                                                           </button>
                                                       </div>
                                                   </div>
-                                                  <script>
-                                                           const  openVi = document.getElementById('js_open_vi')
-                                                           const openEn = document.getElementById('js_open_es')
-                                                           const  openFr = document.getElementById('js_open_fr')
-                                                           const formVi = document.getElementById('vi-title')
-                                                            const formEn = document.getElementById('en-title')
-                                                           const  formFr = document.getElementById('title')
-                                                           console.log(openFr);
-                                                           console.log(formEn);
-                                                           console.log(formVi);
-                                                           console.log(formFr);
-                                                           function showVi(){
-                                                            formVi.classList.add('open')
-                                                            formFr.classList.add('close')
-                                                           }
-                                                           function hideVi(){
-                                                             formVi.classList.remove('open')
-                                                             formEn.classList.add('open')
-                                                           }
-                                                           function showFr(){
-                                                               formFr.classList.remove('close')
-                                                           }
-                                                           openVi.addEventListener('click', showVi)
-                                                           openEn .addEventListener('click', hideVi)
-                                                           openFr .addEventListener('click', showFr)
-
-                                                  </script>
+                                                <?= $this->Html->script('translater_header.js') ?>
 
 
                                           </div>
@@ -668,9 +636,7 @@ $cakeDescription = 'zogravity';
                                                        const  openHeader = document.getElementById('js_open_header')
                                                        const closeHeader = document.getElementById('js_close_header')
                                                        const overHeader = document.querySelector('.over_headers')
-                                                       console.log(openHeader);
-                                                       console.log(closeHeader);
-                                                       console.log(overHeader);
+
                                                        function showHeader(){
                                                          overHeader.classList.add('open')
                                                        }
@@ -711,6 +677,12 @@ $cakeDescription = 'zogravity';
                       <div class="boder_slider">
                         <div class="exit_pres">
                           <i class="fa-solid fa-circle-xmark" id="js_close_press"></i>
+                          <div class="Language_pres">
+                          <div class="en"id="pres-es"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/us.png" alt="tieng-Anh"></div>
+                          <div class="vi"id="pres-vi"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/vn.png" alt="TIENG-VIET"></div>
+                          <div class="fr" id="pres-fr"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/fr.png" alt="Tieng-Phap"></div>
+                            </div>
+
                         </div>
 
 
@@ -719,6 +691,8 @@ $cakeDescription = 'zogravity';
                                                   <!-- <div class="slide_box1"></div> -->
                                 <div class="slider_content">
                                       <div class="slider_titel"><?= $this->Form->control('title_pres', ['value' =>$pres[0]['title_pres']]);?>
+                                      <!-- <?= $this->Form->control('vi_title_pres',['value'=>$header->translation('vi_VN')->title_pres]);?>
+                                      <?= $this->Form->control('en_title_pres',['value'=>$header->translation('en_US')->title_pres]);?> -->
                                       <div class="next_pre">
                                                 <div class="slider_next next" id="next1"> <i class="fa-solid fa-angle-left" ></i></div>
                                                 <div class="slider_pre prev" id="prev1"><i class="fa-solid fa-angle-right" ></i></div>
@@ -731,9 +705,19 @@ $cakeDescription = 'zogravity';
                                           </div>
                                     </div>
 
-                                      <div class="slider_about"> <?= $this->Form->input('about_pres', ['value' =>$pres[0]['about_pres'], 'rows'=>'3']);?></div>
+                                      <div class="slider_about"> <?= $this->Form->input('about_pres', ['value' =>$pres[0]['about_pres'], 'rows'=>'3']);?>
+                                        <?= $this->Form->control('vi_about_pres',['rows'=>'3', 'value'=>$pre->translation('vi_VN')->about_pres]);?>
+                                        <?= $this->Form->control('en_about_pres',['rows'=>'3', 'value'=>$pre->translation('en_US')->about_pres]);?>
+                                      </div>
                                       <div class="slider_note">
-                                          <div class="note"><?= $this->Form->control('author', ['value' =>$pres[0]['author']]);?><?= $this->Form->control('dress', ['value' =>$pres[0]['dress']]);?></div>
+                                          <div class="note">
+                                            <?= $this->Form->control('author', ['value' =>$pres[0]['author']]);?>
+                                            <?= $this->Form->control('dress', ['value' =>$pres[0]['dress']]);?>
+                                            <?= $this->Form->control('vi_author',['value'=>$pre->translation('vi_VN')->author]);?>
+                                            <?= $this->Form->control('vi_dress',['value'=>$pre->translation('vi_VN')->dress]);?>
+                                            <?= $this->Form->control('en_author',['value'=>$pre->translation('en_US')->author]);?>
+                                            <?= $this->Form->control('en_dress',['value'=>$pre->translation('en_US')->dress]);?>
+                                          </div>
                                           <div class="cycle">
                                               <div class="sliderdrop"><a href="<?= $pres[0]['link']?>" style="color:#000";><?=__('Lire l’article')  ?>   <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                                   <div class="sliderdrop-content"><?= $this->Form->control('link', ['value' =>$pres[0]['link']]);?>
@@ -742,6 +726,56 @@ $cakeDescription = 'zogravity';
                                         </div>
 
                                       </div>
+                                      <script>
+                                      const  preVi = document.getElementById('pres-vi')
+                                      const preEn = document.getElementById('pres-es')
+                                      const  preFr = document.getElementById('pres-fr')
+                                      const aboutPresVi = document.getElementById('vi-about-pres')
+                                      const aboutPresEn = document.getElementById('en-about-pres')
+                                      const  aboutPresFr = document.getElementById('about-pres')
+                                      const authorPresVi = document.getElementById('vi-author')
+                                      const authorPresEn = document.getElementById('en-author')
+                                      const  authorPresFr = document.getElementById('author')
+                                      const dressPresVi = document.getElementById('vi-dress')
+                                      const dressPresEn = document.getElementById('en-dress')
+                                      const  dressPresFr = document.getElementById('dress')
+                                      function showPreVi(){
+                                        aboutPresVi.classList.add('open')
+                                        aboutPresFr.classList.add('close')
+                                        aboutPresEn.classList.remove('open')
+                                        authorPresVi.classList.add('open')
+                                        dressPresVi.classList.add('open')
+                                        authorPresFr.classList.add('close')
+                                        dressPresFr.classList.add('close')
+                                        authorPresEn.classList.remove('open')
+                                        dressPresEn.classList.remove('open')
+                                      }
+                                      function showPreEn(){
+                                        aboutPresEn.classList.add('open')
+                                        aboutPresFr.classList.add('close')
+                                        aboutPresVi.classList.remove('open')
+                                        authorPresFr.classList.add('close')
+                                        dressPresFr.classList.add('close')
+                                        authorPresVi.classList.remove('open')
+                                        dressPresVi.classList.remove('open')
+                                        authorPresEn.classList.add('open')
+                                        dressPresEn.classList.add('open')
+                                      }
+                                      function showPreFr(){
+                                        aboutPresEn.classList.remove('open')
+                                        aboutPresFr.classList.remove('close')
+                                        aboutPresVi.classList.remove('open')
+                                        authorPresVi.classList.remove('open')
+                                        dressPresVi.classList.remove('open')
+                                        authorPresEn.classList.remove('open')
+                                        dressPresEn.classList.remove('open')
+                                        authorPresFr.classList.remove('close')
+                                        dressPresFr.classList.remove('close')
+                                      }
+                                    preVi.addEventListener('click', showPreVi)
+                                    preEn.addEventListener('click', showPreEn)
+                                    preFr.addEventListener('click', showPreFr)
+                                      </script>
                                                           <!-- <div class="slide_box2"></div> -->
                                </div>
                           </div>
@@ -811,9 +845,7 @@ $cakeDescription = 'zogravity';
                      const  openPre2 = document.getElementById('js_open_edit_pres2')
                      const closePre = document.getElementById('js_close_press')
                      const overSlider = document.querySelector('.over_slider')
-                     console.log(openPre);
-                     console.log(openPre1);
-                     console.log(openPre2);
+
                      function showSlider(){
                        overSlider.classList.add('open')
                      }
@@ -827,10 +859,7 @@ $cakeDescription = 'zogravity';
 
                    </script>
                   </div>
-
-
                           <!-- ============== -->
-
                       </div>
                       <script type="text/javascript">
                       const iconNext = document.getElementById('next1');
@@ -842,8 +871,6 @@ $cakeDescription = 'zogravity';
                       const iconNext3 = document.getElementById('next3');
                       const icon7 = document.getElementById('prev3');
                       const slider3 = document.querySelector('.slider2');
-
-
                       function next1(){
                           slider.classList.add('open')
                           slider2.classList.add('close')
@@ -867,47 +894,42 @@ $cakeDescription = 'zogravity';
                           slider2.classList.add('close')
                           slider3.classList.remove('open')
                       }
-                      console.log(next1);
-                        console.log(pre1);
-                        console.log(slider3);
-                      console.log(icon7);
-                      console.log(iconNext2);
                       iconNext.addEventListener('click', next1)
                       iconNext2.addEventListener('click', pre2)
                       iconNext3.addEventListener('click', pre1)
                       icon6.addEventListener('click', pre2)
                       icon5.addEventListener('click', pre1)
                       icon7.addEventListener('click', pre3)
-
                       </script>
-
-
-
-
-
 
                                   <div class="news_nos">
                                       <div class="nos_title"><h1><?= __('Nos articles') ?></h1></div>
                                       <div class="new">
-
                                       </div>
                                       <div class="over_Article">
-
-
-
-
 
                                         <div class="boder_Article">
                                       <div class="nos_content">
                                           <div class="conten_nos1">
                                               <?=  $this->Form->control('article1', ['value'=>$post->article1, 'title'=>'nhap so thu tu de dieu kien vi tri bai viet']);?>
                                               <div class="conten_nos1_img"><?= $this->Html->image($article[0]['img']) ?></div>
-                                              <div class="conten_nos1_caption"><?= $this->Form->control('title1', ['value' => $article[0]['title'], 'rows'=>'1']);?></div>
+                                              <div class="conten_nos1_caption">
+                                                <?= $this->Form->control('title1', ['value' => $article[0]['title'], 'rows'=>'1']);?>
+                                                <?= $this->Form->control('vi_title1',['rows'=>'1', 'value'=>$article1->translation('vi_VN')->title]);?>
+                                                <?= $this->Form->control('en_title1',['rows'=>'1', 'value'=>$article1->translation('en_US')->title]);?>
+
+                                              </div>
                                               <div class="conten_nos1_time">
                                                   <div class="conten_nos1_note">
-                                                      <?= $this->Form->control('about1', ['value' => $article[0]['about']]);?></div>15 min
+                                                      <?= $this->Form->control('about1', ['value' => $article[0]['about']]);?>
+                                                      <?= $this->Form->control('vi_about1',['value'=>$article1->translation('vi_VN')->about]);?>
+                                                      <?= $this->Form->control('en_about1',['value'=>$article1->translation('en_US')->about]);?>
+                                                    </div>15 min
                                               </div>
-                                              <div class="conten_nos1_about"><?= $this->Form->control('body1', ['value' => $article[0]['body'], 'rows'=>'1']);?></div>
+                                              <div class="conten_nos1_about"><?= $this->Form->control('body1', ['value' => $article[0]['body'], 'rows'=>'1']);?>
+                                                <?= $this->Form->control('vi_body1',['rows'=>'1', 'value'=>$article1->translation('vi_VN')->body]);?>
+                                                <?= $this->Form->control('en_body1',['rows'=>'1', 'value'=>$article1->translation('en_US')->body]);?>
+                                              </div>
                                               <div class="conten1 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                               <div  style="display:none"><?= $this->Form->control('link1', ['value' => $article[0]['link']]);?></div>
                                           </div>
@@ -915,14 +937,23 @@ $cakeDescription = 'zogravity';
                                               <?=  $this->Form->control('article2', ['value'=>$post->article2]);?>
                                               <div class="conten_nos2_img"><?= $this->Html->image( $article[1]['img'] ) ?></div>
                                               <div class="conten_nos2_char">
-                                                  <div class="conten_nos2_caption"><?= $this->Form->control('title2', ['value' => $article[1]['title'], 'rows'=>'1']);?></div>
+                                                  <div class="conten_nos2_caption"><?= $this->Form->control('title2', ['value' => $article[1]['title'], 'rows'=>'1']);?>
+                                                    <?= $this->Form->control('vi_title2',['rows'=>'1', 'value'=>$article2->translation('vi_VN')->title]);?>
+                                                    <?= $this->Form->control('en_title2',['rows'=>'1', 'value'=>$article2->translation('en_US')->title]);?>
+                                                  </div>
 
 
                                                   <div class="conten_nos2_time">
                                                       <div class="conten_nos2_note">
-                                                      <?= $this->Form->control('about2', ['value' => $article[1]['about']]);?></div>10 min
+                                                      <?= $this->Form->control('about2', ['value' => $article[1]['about']]);?>
+                                                      <?= $this->Form->control('vi_about2',['value'=>$article2->translation('vi_VN')->about]);?>
+                                                      <?= $this->Form->control('en_about2',['value'=>$article2->translation('en_US')->about]);?>
+                                                    </div>10 min
                                                   </div>
-                                                  <div class="conten_nos2_about">  <?= $this->Form->control('body2', ['value' => $article[1]['body'], 'rows'=>'3']);?></div>
+                                                  <div class="conten_nos2_about">  <?= $this->Form->control('body2', ['value' => $article[1]['body'], 'rows'=>'3']);?>
+                                                    <?= $this->Form->control('vi_body2',['rows'=>'1', 'value'=>$article2->translation('vi_VN')->body]);?>
+                                                    <?= $this->Form->control('en_body2',['rows'=>'1', 'value'=>$article2->translation('en_US')->body]);?>
+                                                  </div>
                                                   <div class="conten2 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                                 <div style="display:none">  <?= $this->Form->control('link2', ['value' => $article[1]['link']]);?></div>
                                               </div>
@@ -930,15 +961,27 @@ $cakeDescription = 'zogravity';
                                           <div class="conten_nos4">
                                             <?=  $this->Form->control('article3', ['value'=>$post->article3]);?>
                                               <div class="conten_nos4_img"></div>
-                                              <div class="conten_nos4_caption"><?= $this->Form->control('title3', ['value' => $article[2]['title'], 'rows'=>'1']);?></div>
+                                              <div class="conten_nos4_caption"><?= $this->Form->control('title3', ['value' => $article[2]['title'], 'rows'=>'1']);?>
+                                                <?= $this->Form->control('vi_title3',['value'=>$article3->translation('vi_VN')->title]);?>
+                                                <?= $this->Form->control('en_title3',['value'=>$article3->translation('en_US')->title]);?>
+
+                                              </div>
 
 
                                               <div class="conten_nos4_time">
                                                   <div class="conten_nos4_note">
-                                              <?= $this->Form->control('about3', ['value' => $article[2]['about']]);?></div>8 min
+                                              <?= $this->Form->control('about3', ['value' => $article[2]['about']]);?>
+                                              <?= $this->Form->control('vi_about3',['value'=>$article3->translation('vi_VN')->about]);?>
+                                              <?= $this->Form->control('en_about3',['value'=>$article3->translation('en_US')->about]);?>
+
+                                            </div>8 min
 
                                               </div>
-                                              <div class="conten_nos4_about"><?= $this->Form->control('body3', ['value' => $article[2]['body'], 'rows'=>'2']);?></div>
+                                              <div class="conten_nos4_about">
+                                                <?= $this->Form->control('body3', ['value' => $article[2]['body'], 'rows'=>'2']);?>
+                                                <?= $this->Form->control('vi_body3',['rows'=>'1', 'value'=>$article3->translation('vi_VN')->body]);?>
+                                                <?= $this->Form->control('en_body3',['rows'=>'1', 'value'=>$article3->translation('en_US')->body]);?>
+                                              </div>
                                               <div class="conten4 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                               <div style="display:none"><?= $this->Form->control('link3', ['value' => $article[2]['link']]);?></div>
                                           </div>
@@ -946,16 +989,29 @@ $cakeDescription = 'zogravity';
                                           <div class="conten_nos3">
                                               <?=  $this->Form->control('article4', ['value'=>$post->article4]);?>
                                               <div class="conten_nos3_img"></div>
-                                              <div class="conten_nos3_caption"><?= $this->Form->control('title4', ['value' => $article[3]['title'], 'rows'=>'1']);?></div>
+                                              <div class="conten_nos3_caption">
+                                                <?= $this->Form->control('title4', ['value' => $article[3]['title'], 'rows'=>'1']);?>
+                                                <?= $this->Form->control('vi_title4',['value'=>$article4->translation('vi_VN')->title]);?>
+                                                <?= $this->Form->control('en_title4',['value'=>$article4->translation('en_US')->title]);?>
+                                              </div>
 
 
 
 
                                               <div class="conten_nos3_time">
                                                   <div class="conten_nos3_note">
-                                                    <?= $this->Form->control('about4', ['value' => $article[3]['about']]);?></div>12 min
+                                                    <?= $this->Form->control('about4', ['value' => $article[3]['about']]);?>
+                                                    <?= $this->Form->control('vi_about4',['value'=>$article4->translation('vi_VN')->about]);?>
+                                                    <?= $this->Form->control('en_about4',['value'=>$article4->translation('en_US')->about]);?>
+
+                                                  </div>12 min
                                               </div>
-                                              <div class="conten_nos3_about"><?= $this->Form->control('body4', ['value' => $article[3]['body'], 'rows'=>'2']);?></div>
+                                              <div class="conten_nos3_about">
+                                                <?= $this->Form->control('body4', ['value' => $article[3]['body'], 'rows'=>'2']);?>
+                                                <?= $this->Form->control('vi_body4',['rows'=>'1', 'value'=>$article4->translation('vi_VN')->body]);?>
+                                                <?= $this->Form->control('en_body4',['rows'=>'1', 'value'=>$article4->translation('en_US')->body]);?>
+
+                                              </div>
                                               <div class="conten3 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
                                             <div style="display:none"><?= $this->Form->control('link4', ['value' => $article[3]['link']]);?></div>
                                           </div>
@@ -964,17 +1020,224 @@ $cakeDescription = 'zogravity';
                                       </div>
 
                                         <i class="fa-solid fa-circle-xmark" id="js_close_article"></i>
+                                        <div class="Language_article">
+                                            <div class="en"id="article-es"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/us.png" alt="tieng-Anh"></div>
+                                            <div class="vn"id="article-vi"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/vn.png" alt="TIENG-VIET"></div>
+                                            <div class="fr" id="article-fr"><img src="https://dichthuatphuongdong.com/tienich/uploads/flags/shiny/48x48/fr.png" alt="Tieng-Phap"></div>
+                                        </div>
 
                                       <button type="submit" name="button" id="save_articles">save</i></button>
+
+                                      <script>
+                                      const articleVi = document.getElementById('article-vi')
+                                      const articleEn = document.getElementById('article-es')
+                                      const articleFr = document.getElementById('article-fr')
+                                      const aboutArticleVi = document.getElementById('vi-about1')
+                                      const aboutArticleEn = document.getElementById('en-about1')
+                                      const aboutArticleFr = document.getElementById('about1')
+
+                                      const titleArticleVi = document.getElementById('vi-title1')
+                                      const titleArticleEn = document.getElementById('en-title1')
+                                      const titleArticleFr = document.getElementById('title1')
+
+                                      const bodyArticleVi = document.getElementById('vi-body1')
+                                      const bodyArticleEn = document.getElementById('en-body1')
+                                      const bodyArticleFr = document.getElementById('body1')
+                                      // bai bao so 2
+                                      const aboutArticleVi2 = document.getElementById('vi-about2')
+                                      const aboutArticleEn2 = document.getElementById('en-about2')
+                                      const aboutArticleFr2 = document.getElementById('about2')
+
+                                      const titleArticleVi2 = document.getElementById('vi-title2')
+                                      const titleArticleEn2 = document.getElementById('en-title2')
+                                      const titleArticleFr2 = document.getElementById('title2')
+
+                                      const bodyArticleVi2 = document.getElementById('vi-body2')
+                                      const bodyArticleEn2 = document.getElementById('en-body2')
+                                      const bodyArticleFr2 = document.getElementById('body2')
+                                      // bai bao so 3
+                                      const aboutArticleVi3 = document.getElementById('vi-about3')
+                                      const aboutArticleEn3 = document.getElementById('en-about3')
+                                      const aboutArticleFr3 = document.getElementById('about3')
+
+                                      const titleArticleVi3 = document.getElementById('vi-title3')
+                                      const titleArticleEn3 = document.getElementById('en-title3')
+                                      const titleArticleFr3 = document.getElementById('title3')
+
+                                      const bodyArticleVi3 = document.getElementById('vi-body3')
+                                      const bodyArticleEn3 = document.getElementById('en-body3')
+                                      const bodyArticleFr3 = document.getElementById('body3')
+                                      // bai bao so 4
+                                      const aboutArticleVi4 = document.getElementById('vi-about4')
+                                      const aboutArticleEn4 = document.getElementById('en-about4')
+                                      const aboutArticleFr4 = document.getElementById('about4')
+
+                                      const titleArticleVi4 = document.getElementById('vi-title4')
+                                      const titleArticleEn4 = document.getElementById('en-title4')
+                                      const titleArticleFr4 = document.getElementById('title4')
+
+                                      const bodyArticleVi4 = document.getElementById('vi-body4')
+                                      const bodyArticleEn4 = document.getElementById('en-body4')
+                                      const bodyArticleFr4 = document.getElementById('body4')
+
+
+                                      function showArticleVi(){
+                                        aboutArticleVi.classList.add('open')
+                                        titleArticleVi.classList.add('open')
+                                        bodyArticleVi.classList.add('open')
+                                        aboutArticleEn.classList.remove('open')
+                                        bodyArticleEn.classList.remove('open')
+                                        titleArticleEn.classList.remove('open')
+                                        bodyArticleFr.classList.add('close')
+                                        titleArticleFr.classList.add('close')
+                                        aboutArticleFr.classList.add('close')
+                                        // bai bao so 2
+                                        aboutArticleVi2.classList.add('open')
+                                        titleArticleVi2.classList.add('open')
+                                        bodyArticleVi2.classList.add('open')
+                                        aboutArticleEn2.classList.remove('open')
+                                        bodyArticleEn2.classList.remove('open')
+                                        titleArticleEn2.classList.remove('open')
+                                        bodyArticleFr2.classList.add('close')
+                                        titleArticleFr2.classList.add('close')
+                                        aboutArticleFr2.classList.add('close')
+                                        // bai bao so 3
+                                        aboutArticleVi3.classList.add('open')
+                                        titleArticleVi3.classList.add('open')
+                                        bodyArticleVi3.classList.add('open')
+                                        aboutArticleEn3.classList.remove('open')
+                                        bodyArticleEn3.classList.remove('open')
+                                        titleArticleEn3.classList.remove('open')
+                                        bodyArticleFr3.classList.add('close')
+                                        titleArticleFr3.classList.add('close')
+                                        aboutArticleFr3.classList.add('close')
+                                        // bai bao so 4
+                                        aboutArticleVi4.classList.add('open')
+                                        titleArticleVi4.classList.add('open')
+                                        bodyArticleVi4.classList.add('open')
+                                        aboutArticleEn4.classList.remove('open')
+                                        bodyArticleEn4.classList.remove('open')
+                                        titleArticleEn4.classList.remove('open')
+                                        bodyArticleFr4.classList.add('close')
+                                        titleArticleFr4.classList.add('close')
+                                        aboutArticleFr4.classList.add('close')
+                                      }
+                                      function showArticleEn(){
+                                        titleArticleEn.classList.add('open')
+                                        aboutArticleEn.classList.add('open')
+                                        bodyArticleEn.classList.add('open')
+                                        titleArticleFr.classList.add('close')
+                                        aboutArticleFr.classList.add('close')
+                                        bodyArticleFr.classList.add('close')
+                                        aboutArticleVi.classList.remove('open')
+                                        bodyArticleVi.classList.remove('open')
+                                        titleArticleVi.classList.remove('open')
+                                        // bai so2
+                                        titleArticleEn2.classList.add('open')
+                                        aboutArticleEn2.classList.add('open')
+                                        bodyArticleEn2.classList.add('open')
+                                        titleArticleFr2.classList.add('close')
+                                        aboutArticleFr2.classList.add('close')
+                                        bodyArticleFr2.classList.add('close')
+                                        aboutArticleVi2.classList.remove('open')
+                                        bodyArticleVi2.classList.remove('open')
+                                        titleArticleVi2.classList.remove('open')
+                                        // bai bao so 3
+                                        titleArticleEn3.classList.add('open')
+                                        aboutArticleEn3.classList.add('open')
+                                        bodyArticleEn3.classList.add('open')
+                                        titleArticleFr3.classList.add('close')
+                                        aboutArticleFr3.classList.add('close')
+                                        bodyArticleFr3.classList.add('close')
+                                        aboutArticleVi3.classList.remove('open')
+                                        bodyArticleVi3.classList.remove('open')
+                                        titleArticleVi3.classList.remove('open')
+                                        // bai bao so 4
+                                        titleArticleEn4.classList.add('open')
+                                        aboutArticleEn4.classList.add('open')
+                                        bodyArticleEn4.classList.add('open')
+                                        titleArticleFr4.classList.add('close')
+                                        aboutArticleFr4.classList.add('close')
+                                        bodyArticleFr4.classList.add('close')
+                                        aboutArticleVi4.classList.remove('open')
+                                        bodyArticleVi4.classList.remove('open')
+                                        titleArticleVi4.classList.remove('open')
+
+
+
+                                      }
+                                      function showArticleFr(){
+                                        bodyArticleEn.classList.remove('open')
+                                        aboutArticleEn.classList.remove('open')
+                                        titleArticleEn.classList.remove('open')
+                                        bodyArticleVi.classList.remove('open')
+                                        titleArticleVi.classList.remove('open')
+                                        aboutArticleVi.classList.remove('open')
+                                        aboutArticleFr.classList.remove('close')
+                                        bodyArticleFr.classList.remove('close')
+                                        titleArticleFr.classList.remove('close')
+                                        // bai so 2
+                                        bodyArticleEn2.classList.remove('open')
+                                        aboutArticleEn2.classList.remove('open')
+                                        titleArticleEn2.classList.remove('open')
+                                        bodyArticleVi2.classList.remove('open')
+                                        titleArticleVi2.classList.remove('open')
+                                        aboutArticleVi2.classList.remove('open')
+                                        aboutArticleFr2.classList.remove('close')
+                                        bodyArticleFr2.classList.remove('close')
+                                        titleArticleFr2.classList.remove('close')
+                                        // bai bao so 3
+                                        bodyArticleEn3.classList.remove('open')
+                                        aboutArticleEn3.classList.remove('open')
+                                        titleArticleEn3.classList.remove('open')
+                                        bodyArticleVi3.classList.remove('open')
+                                        titleArticleVi3.classList.remove('open')
+                                        aboutArticleVi3.classList.remove('open')
+                                        aboutArticleFr3.classList.remove('close')
+                                        bodyArticleFr3.classList.remove('close')
+                                        titleArticleFr3.classList.remove('close')
+                                        // bai bao so4
+                                        bodyArticleEn4.classList.remove('open')
+                                        aboutArticleEn4.classList.remove('open')
+                                        titleArticleEn4.classList.remove('open')
+                                        bodyArticleVi4.classList.remove('open')
+                                        titleArticleVi4.classList.remove('open')
+                                        aboutArticleVi4.classList.remove('open')
+                                        aboutArticleFr4.classList.remove('close')
+                                        bodyArticleFr4.classList.remove('close')
+                                        titleArticleFr4.classList.remove('close')
+
+                                      }
+
+                                    articleVi.addEventListener('click', showArticleVi)
+                                    articleEn.addEventListener('click', showArticleEn)
+                                    articleFr.addEventListener('click', showArticleFr)
+
+                                    console.log(articleVi);
+                                    console.log(articleEn);
+                                    console.log(articleFr);
+
+                                    console.log(aboutArticleVi3);
+                                    console.log(aboutArticleEn3);
+                                    console.log(aboutArticleFr3);
+
+                                    console.log(bodyArticleVi3);
+                                    console.log(bodyArticleEn3);
+                                    console.log(bodyArticleFr3);
+
+                                    console.log(titleArticleVi3);
+                                    console.log(titleArticleEn3);
+                                    console.log(titleArticleFr3);
+
+
+                                      </script>
+
 
                                     </div>
                                     <script>
                                       const  openArticle = document.getElementById('js_open_article')
                                       const closeArticle = document.getElementById('js_close_article')
                                       const overArticle = document.querySelector('.over_Article')
-                                      console.log(openArticle);
-                                      console.log(closeArticle);
-                                      console.log(overArticle);
                                       function showArticle(){
                                         overArticle.classList.add('open')
                                       }
