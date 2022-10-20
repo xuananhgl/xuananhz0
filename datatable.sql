@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2022 lúc 02:16 AM
+-- Thời gian đã tạo: Th10 19, 2022 lúc 12:07 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -43,10 +43,10 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id_article`, `title`, `body`, `img`, `about`, `link`, `created`, `modified`) VALUES
-(6, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', '', '', NULL, NULL),
-(17, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', '', '', NULL, NULL),
-(18, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', '', '', NULL, NULL),
-(19, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', '', '', NULL, NULL),
+(6, ' 1 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', 'SECTEUR PUBLIC', '', NULL, NULL),
+(17, ' 2 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', 'SECTEUR', '', NULL, NULL),
+(18, ' 3 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', 'OPM', '', NULL, NULL),
+(19, ' 4 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', 'CLIENT', '', NULL, NULL),
 (20, '7 conseils clés pour bien s’équiper d’un outil de gestion de projet', 'Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.', 'https://www.z0gravity.com/storage-z0G/2020/09/outil-gestion-de-projets-entreprise-z0gravity-1-300x160.jpg', 'CLIENT', '', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -70,13 +70,13 @@ CREATE TABLE `aticles_i18n` (
 
 INSERT INTO `aticles_i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `content`) VALUES
 (276, 'en_US', 'Articles', 17, 'about', 'COMPANIES'),
-(277, 'en_US', 'Articles', 17, 'title', 'ENTREPRISES'),
+(277, 'en_US', 'Articles', 17, 'title', 'SaaS online project management software'),
 (278, 'en_US', 'Articles', 17, 'body', 'Choosing the right project management software or project management tool is a crucial question for companies'),
 (279, 'es', 'Articles', 17, 'about', 'COMPAÑÍAS'),
 (280, 'es', 'Articles', 17, 'title', 'Cómo elegir tu software de gestión de proyectos'),
 (281, 'es', 'Articles', 17, 'body', 'Elegir el software de gestión de proyectos o la herramienta de gestión de proyectos adecuada es una cuestión crucial para las empresas.'),
 (282, 'vi_VN', 'Articles', 17, 'about', 'CÁC CÔNG TY'),
-(283, 'vi_VN', 'Articles', 17, 'title', 'Cách chọn phần mềm quản lý dự án của bạn'),
+(283, 'vi_VN', 'Articles', 17, 'title', 'Phần mềm quản lý dự án trực tuyến SaaSádasd'),
 (284, 'vi_VN', 'Articles', 17, 'body', 'Lựa chọn phần mềm quản lý dự án hoặc công cụ quản lý dự án phù hợp là một câu hỏi quan trọng đối với các công ty.'),
 (285, 'en_US', 'Articles', 18, 'about', 'PUBLIC SECTOR'),
 (286, 'en_US', 'Articles', 18, 'title', 'Public sector project management software'),
@@ -85,7 +85,7 @@ INSERT INTO `aticles_i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `co
 (289, 'es', 'Articles', 18, 'title', 'Software de gestión de proyectos del sector público'),
 (290, 'es', 'Articles', 18, 'body', 'z0 Gravity es un software de gestión de proyectos desarrollado con y para las autoridades locales. Gracias a su sencilla interfaz y al panel integrado, este software de gestión de proyectos del sector público permite responder de forma eficaz a las limitaciones de tiempo y presupuesto de las autoridades locales.'),
 (291, 'vi_VN', 'Articles', 18, 'about', 'NGÀNH CÔNG'),
-(292, 'vi_VN', 'Articles', 18, 'title', 'Phần mềm quản lý dự án khu vực công'),
+(292, 'vi_VN', 'Articles', 18, 'title', 'Phần mềm quản lý dự án khu vực công    adasds'),
 (293, 'vi_VN', 'Articles', 18, 'body', 'z0 Gravity là một phần mềm quản lý dự án được phát triển cho và cho chính quyền địa phương. Nhờ giao diện đơn giản và bảng điều khiển tích hợp, phần mềm quản lý dự án khu vực công này có thể đáp ứng hiệu quả các hạn chế về thời gian và ngân sách của chính quyền địa phương.'),
 (294, 'en_US', 'Articles', 19, 'about', 'PMO'),
 (295, 'en_US', 'Articles', 19, 'title', 'SaaS online project management software'),
@@ -94,7 +94,7 @@ INSERT INTO `aticles_i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `co
 (298, 'es', 'Articles', 19, 'title', 'Software de gestión de proyectos en línea SaaS'),
 (299, 'es', 'Articles', 19, 'body', 'En realidad, gestionar un proyecto implica llevar a cabo una sucesión de tareas muy diferentes para la empresa y que muchas veces deben realizarse simultáneamente: planificación, distribución de recursos, tareas, reporte de actividades, seguimiento del progreso de los proyectos, consumo de presupuesto, etc.'),
 (300, 'vi_VN', 'Articles', 19, 'about', 'PMO'),
-(301, 'vi_VN', 'Articles', 19, 'title', 'Phần mềm quản lý dự án trực tuyến SaaS'),
+(301, 'vi_VN', 'Articles', 19, 'title', 'Phần mềm quản lý dự án trực tuyến SaaSádasd'),
 (302, 'vi_VN', 'Articles', 19, 'body', 'Quản lý một dự án thực sự liên quan đến việc thực hiện liên tiếp các nhiệm vụ rất khác nhau cho công ty và thường phải được thực hiện đồng thời: lập kế hoạch, phân phối nguồn lực, nhiệm vụ, báo cáo hoạt động, giám sát tiến độ của dự án, tiêu thụ ngân sách, v.v.'),
 (303, 'en_US', 'Articles', 20, 'about', 'CUSTOMER'),
 (304, 'en_US', 'Articles', 20, 'title', '7 key tips for properly equipping yourself with a project management tool'),
@@ -105,20 +105,52 @@ INSERT INTO `aticles_i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `co
 (309, 'vi_VN', 'Articles', 20, 'about', 'KHÁCH HÀNG'),
 (310, 'vi_VN', 'Articles', 20, 'title', '7 mẹo chính để trang bị cho mình một công cụ quản lý dự án đúng cách'),
 (311, 'vi_VN', 'Articles', 20, 'body', 'Quyết định đã đến lúc đầu tư vào một công cụ quản lý dự án cho doanh nghiệp của bạn? Bạn có muốn tăng năng suất và hiệu quả trong việc quản lý công việc kinh doanh hàng ngày của mình và đồng thời mang lại lợi ích cho tất cả các phòng ban? Đó là một ý tưởng rất tốt.'),
-(321, 'en_US', 'Articles', 1, 'about', 'aaa'),
-(322, 'en_US', 'Articles', 1, 'title', 'aaa'),
-(323, 'en_US', 'Articles', 1, 'body', 'aaa'),
-(324, 'es', 'Articles', 1, 'about', 'aaa'),
-(325, 'es', 'Articles', 1, 'title', 'aa'),
-(326, 'es', 'Articles', 1, 'body', 'aaaa'),
-(327, 'vi_VN', 'Articles', 1, 'about', 'aaaa'),
-(328, 'vi_VN', 'Articles', 1, 'title', 'aaa'),
-(329, 'vi_VN', 'Articles', 1, 'body', 'aa'),
-(330, 'en_US', 'Articles', 2, 'about', 'cc'),
-(331, 'en_US', 'Articles', 2, 'title', 'ccc'),
-(332, 'en_US', 'Articles', 2, 'body', 'ccc'),
-(333, 'es', 'Articles', 2, 'title', 'cc'),
-(334, 'es', 'Articles', 2, 'body', 'ccccc');
+(362, 'vi_VN', 'Articles', 6, 'title', 'Phần mềm quản lý dự án khu vực công'),
+(363, 'vi_VN', 'Articles', 6, 'about', 'ENTREPRISE');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `bars`
+--
+
+CREATE TABLE `bars` (
+  `id` int(11) NOT NULL,
+  `ENTREPRISES` varchar(255) NOT NULL,
+  `SECTEUR` varchar(255) NOT NULL,
+  `PROPOS` varchar(255) NOT NULL,
+  `CONTACT` varchar(255) NOT NULL,
+  `BLOG` varchar(255) NOT NULL,
+  `link_ENTREPRISES` varchar(255) NOT NULL,
+  `link_SECTEUR` varchar(255) NOT NULL,
+  `link_PROPOS` varchar(255) NOT NULL,
+  `link_CONTACT` varchar(255) NOT NULL,
+  `link_BLOG` varchar(255) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `bars`
+--
+
+INSERT INTO `bars` (`id`, `ENTREPRISES`, `SECTEUR`, `PROPOS`, `CONTACT`, `BLOG`, `link_ENTREPRISES`, `link_SECTEUR`, `link_PROPOS`, `link_CONTACT`, `link_BLOG`, `created`, `modified`) VALUES
+(1, 'ENTREPRISES ', ' À PROPOS', 'CONTACT', 'SECTEUR PUBLIC ', ' BLOG', 'aaaaa', 'aaa', 'aa', '', 'aaaaa', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `bars_i18n`
+--
+
+CREATE TABLE `bars_i18n` (
+  `id` int(11) NOT NULL,
+  `locale` varchar(6) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `foreign_key` int(10) NOT NULL,
+  `field` varchar(255) NOT NULL,
+  `content` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -131,7 +163,8 @@ CREATE TABLE `displays` (
   `style` varchar(255) NOT NULL,
   `backgroun_header` varchar(255) NOT NULL,
   `color_header` varchar(191) NOT NULL,
-  `color_prou` varchar(255) NOT NULL,
+  `color_button` varchar(255) NOT NULL,
+  `color_pour` varchar(255) NOT NULL,
   `image_pour` varchar(255) NOT NULL,
   `image_header` varchar(191) NOT NULL,
   `created` datetime DEFAULT NULL,
@@ -142,10 +175,9 @@ CREATE TABLE `displays` (
 -- Đang đổ dữ liệu cho bảng `displays`
 --
 
-INSERT INTO `displays` (`id`, `style`, `backgroun_header`, `color_header`, `color_prou`, `image_pour`, `image_header`, `created`, `modified`) VALUES
-(1, 'style9', '#e66465', '#e66465', '', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', '2022-09-09 16:17:40', '2022-09-09 16:17:40'),
-(2, 'style4', '#29654b', '#000000', '', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', NULL, NULL),
-(4, 'style2', '#29654b', '#8479a0', '', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', NULL, NULL);
+INSERT INTO `displays` (`id`, `style`, `backgroun_header`, `color_header`, `color_button`, `color_pour`, `image_pour`, `image_header`, `created`, `modified`) VALUES
+(1, 'style9', '#1579d5', '#f8f7f7', '#f5ed00', '#41949f', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', '2022-09-09 16:17:40', '2022-09-09 16:17:40'),
+(2, 'style4', '#1579d5', '#f8f7f7', '#f5ed00', '', 'https://www.z0gravity.com/storage-z0G/2019/06/ZG_HomeObjectif_2x.jpg', 'https://www.z0gravity.com/storage-z0G/2019/06/thecamp.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -168,7 +200,7 @@ CREATE TABLE `headers` (
 --
 
 INSERT INTO `headers` (`id_headers`, `about`, `title`, `button`, `video`, `created`, `modified`) VALUES
-(39, 'Avec z0 Gravity, découvrez la simplicité et la \r\nperformance d’une gestion de projet collaborative.', 'Fédérateur. Personnalisé. Souple & adapté', 'Découvrez z0 Gravity', 'Voir la vidéo', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(39, 'Avec z0 Gravity, découvrez la simplicité et la \r\nperformance d’une gestion de projet collaborative.', 'Fédérateur. Personnalisé. Souple & adaptéaa', '', 'Voir la vidéo', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -190,39 +222,12 @@ CREATE TABLE `i18n` (
 --
 
 INSERT INTO `i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `content`) VALUES
-(220, 'en_US', 'Headers', 39, 'about', 'With z0 Gravity, discover the simplicity and performance of collaborative project management.'),
-(221, 'en_US', 'Headers', 39, 'title', 'Federator. Personalized. Flexible & adapted.'),
+(220, 'en_US', 'Headers', 39, 'about', 'aaaaaa'),
+(221, 'en_US', 'Headers', 39, 'title', 'aaaaaaaaaaaaaaaaaaaaaaaaa'),
 (222, 'es', 'Headers', 39, 'about', 'Con z0 Gravity, descubra la simplicidad y el rendimiento de la gestión colaborativa de proyectos.'),
 (223, 'es', 'Headers', 39, 'title', 'federador. Personalizado. Flexible y adaptado.'),
-(224, 'vi_VN', 'Headers', 39, 'about', 'Với z0 Gravity, khám phá sự đơn giản và hiệu suất của quản lý dự án cộng tác.'),
-(225, 'vi_VN', 'Headers', 39, 'title', 'Người liên bang. Được cá nhân hóa. Linh hoạt và thích nghi.'),
-(226, 'en_US', 'Articles', 14, 'about', 'COMPANIES'),
-(227, 'en_US', 'Articles', 14, 'title', 'ENTREPRISES'),
-(228, 'en_US', 'Articles', 14, 'body', 'Choosing the right project management software or project management tool is a crucial question for companies'),
-(229, 'es', 'Articles', 14, 'about', 'COMPAÑÍAS'),
-(230, 'es', 'Articles', 14, 'title', 'Cómo elegir tu software de gestión de proyectos'),
-(231, 'es', 'Articles', 14, 'body', 'Elegir el software de gestión de proyectos o la herramienta de gestión de proyectos adecuada es una cuestión crucial para las empresas.'),
-(232, 'vi_VN', 'Articles', 14, 'about', 'CÁC CÔNG TY'),
-(233, 'vi_VN', 'Articles', 14, 'title', 'Cách chọn phần mềm quản lý dự án của bạn'),
-(234, 'vi_VN', 'Articles', 14, 'body', 'Lựa chọn phần mềm quản lý dự án hoặc công cụ quản lý dự án phù hợp là một câu hỏi quan trọng đối với các công ty.'),
-(235, 'en_US', 'Articles', 15, 'about', 'COMPANIES'),
-(236, 'en_US', 'Articles', 15, 'title', 'ENTREPRISES'),
-(237, 'en_US', 'Articles', 15, 'body', 'Choosing the right project management software or project management tool is a crucial question for companies'),
-(238, 'es', 'Articles', 15, 'about', 'COMPAÑÍAS'),
-(239, 'es', 'Articles', 15, 'title', 'Cómo elegir tu software de gestión de proyectos'),
-(240, 'es', 'Articles', 15, 'body', 'Elegir el software de gestión de proyectos o la herramienta de gestión de proyectos adecuada es una cuestión crucial para las empresas.'),
-(241, 'vi_VN', 'Articles', 15, 'about', 'CÁC CÔNG TY'),
-(242, 'vi_VN', 'Articles', 15, 'title', 'Cách chọn phần mềm quản lý dự án của bạn'),
-(243, 'vi_VN', 'Articles', 15, 'body', 'Lựa chọn phần mềm quản lý dự án hoặc công cụ quản lý dự án phù hợp là một câu hỏi quan trọng đối với các công ty.'),
-(244, 'en_US', 'Articles', 16, 'about', 'COMPANIES'),
-(245, 'en_US', 'Articles', 16, 'title', 'ENTREPRISES'),
-(246, 'en_US', 'Articles', 16, 'body', 'Choosing the right project management software or project management tool is a crucial question for companies'),
-(247, 'es', 'Articles', 16, 'about', 'COMPAÑÍAS'),
-(248, 'es', 'Articles', 16, 'title', 'Cómo elegir tu software de gestión de proyectos'),
-(249, 'es', 'Articles', 16, 'body', 'Elegir el software de gestión de proyectos o la herramienta de gestión de proyectos adecuada es una cuestión crucial para las empresas.'),
-(250, 'vi_VN', 'Articles', 16, 'about', 'CÁC CÔNG TY'),
-(251, 'vi_VN', 'Articles', 16, 'title', 'Cách chọn phần mềm quản lý dự án của bạn'),
-(252, 'vi_VN', 'Articles', 16, 'body', 'Lựa chọn phần mềm quản lý dự án hoặc công cụ quản lý dự án phù hợp là một câu hỏi quan trọng đối với các công ty.');
+(224, 'vi_VN', 'Headers', 39, 'about', 'Với z0 Gravity, khám phá sự đơn giản và hiệu suất của quản lý dự án cộng tác.aád'),
+(225, 'vi_VN', 'Headers', 39, 'title', 'Người liên bang. Được cá nhân hóa. Linh hoạt và thích nghi.ádasasd');
 
 -- --------------------------------------------------------
 
@@ -243,7 +248,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id_posts`, `article1`, `article2`, `article3`, `article4`) VALUES
-(1, 2, 'https://jsonplaceholder.typicode.com/posts', 9, 9);
+(1, 1, '2', 3, 4);
 
 -- --------------------------------------------------------
 
@@ -329,9 +334,9 @@ CREATE TABLE `pres` (
 --
 
 INSERT INTO `pres` (`id`, `title_pres`, `logo`, `about_pres`, `author`, `dress`, `link`, `created`, `modified`) VALUES
-(25, 'PRESSE1111', 'https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet5', 'PMO service client Orange Sud-Ouest2', 'https://i.pinimg.com/originals/79/11/f0/7911f0511d4c5e568c3e2353c6f2f584.jpg', '2022-10-13 01:04:11', '0000-00-00 00:00:00'),
-(26, 'PRESSE1111', 'https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet5', 'PMO service client Orange Sud-Ouest2', '', '2022-10-13 14:34:40', '0000-00-00 00:00:00'),
-(27, 'PRESSE1111', 'https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet5', 'PMO service client Orange Sud-Ouest2', '', '2022-10-13 14:34:40', '0000-00-00 00:00:00');
+(25, 'PRESSE2', 'https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet5a', 'PMO service client Orange Sud-Ouest2a', 'https://i.pinimg.com/originals/79/11/f0/7911f0511d4c5e568c3e2353c6f2f584.jpg', '2022-10-16 23:52:41', '0000-00-00 00:00:00'),
+(26, 'PRESSE3', 'https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet5', 'PMO service client Orange Sud-Ouest2', '', '2022-10-16 23:55:08', '0000-00-00 00:00:00'),
+(27, 'PRESSE', 'https://i.pinimg.com/236x/c2/fc/c0/c2fcc0a977fd997263a9cd768c50578f.jpg', 'Il y avait tout d’abord la sécurité, l’outil z0 Gravity a pu être rapidement validé par les équipes d’Orange Cyberdéfense.2', 'Stéphane Touchet5', 'PMO service client Orange Sud-Ouest2', '', '2022-10-16 16:03:33', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -359,27 +364,27 @@ INSERT INTO `pres_i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `conte
 (147, 'es', 'Pres', 25, 'about_pres', 'En primer lugar estaba la seguridad, la herramienta z0 Gravity fue rápidamente validada por los equipos de Orange Cyberdefense.'),
 (148, 'es', 'Pres', 25, 'dress', '  Servicio de atención al cliente de la oficina de gestión de proyectos Orange South West'),
 (149, 'es', 'Pres', 25, 'author', 'Stéphane Touchet'),
-(150, 'vi_VN', 'Pres', 25, 'about_pres', 'Trước hết là tính bảo mật, công cụ z0 Gravity đã nhanh chóng được xác nhận bởi nhóm Orange Cyberdefense.'),
-(151, 'vi_VN', 'Pres', 25, 'dress', 'Dịch vụ khách hàng PMO Orange South West'),
-(152, 'vi_VN', 'Pres', 25, 'author', 'Stephane Touchet'),
+(150, 'vi_VN', 'Pres', 25, 'about_pres', 'aaaaaa'),
+(151, 'vi_VN', 'Pres', 25, 'dress', 'aaaaaa'),
+(152, 'vi_VN', 'Pres', 25, 'author', 'vsdfsdfsdfsdfsd'),
 (153, 'en_US', 'Pres', 26, 'about_pres', 'First of all there was security, the z0 Gravity tool was quickly validated by the Orange Cyberdefense teams.2'),
 (154, 'en_US', 'Pres', 26, 'dress', '  PMO customer service Orange South West2'),
 (155, 'en_US', 'Pres', 26, 'author', 'Stephane Touchet2'),
 (156, 'es', 'Pres', 26, 'about_pres', 'En primer lugar estaba la seguridad, la herramienta z0 Gravity fue rápidamente validada por los equipos de Orange Cyberdefense.2'),
 (157, 'es', 'Pres', 26, 'dress', '  Servicio de atención al cliente de la oficina de gestión de proyectos Orange South West2'),
 (158, 'es', 'Pres', 26, 'author', 'Stéphane Touchet2'),
-(159, 'vi_VN', 'Pres', 26, 'about_pres', 'Trước hết là tính bảo mật, công cụ z0 Gravity đã nhanh chóng được xác nhận bởi nhóm Orange Cyberdefense.2'),
-(160, 'vi_VN', 'Pres', 26, 'dress', 'Dịch vụ khách hàng PMO Orange South West2'),
-(161, 'vi_VN', 'Pres', 26, 'author', 'Stephane Touchet2'),
+(159, 'vi_VN', 'Pres', 26, 'about_pres', 'aaaaaa'),
+(160, 'vi_VN', 'Pres', 26, 'dress', 'aaaaaa'),
+(161, 'vi_VN', 'Pres', 26, 'author', 'aaaaaa'),
 (162, 'en_US', 'Pres', 27, 'about_pres', 'First of all there was security, the z0 Gravity tool was quickly validated by the Orange Cyberdefense teams.3'),
 (163, 'en_US', 'Pres', 27, 'dress', '  PMO customer service Orange South West3'),
 (164, 'en_US', 'Pres', 27, 'author', 'Stephane Touchet3'),
 (165, 'es', 'Pres', 27, 'about_pres', 'En primer lugar estaba la seguridad, la herramienta z0 Gravity fue rápidamente validada por los equipos de Orange Cyberdefense.3'),
 (166, 'es', 'Pres', 27, 'dress', '  Servicio de atención al cliente de la oficina de gestión de proyectos Orange South West3'),
 (167, 'es', 'Pres', 27, 'author', 'Stéphane Touchet3'),
-(168, 'vi_VN', 'Pres', 27, 'about_pres', 'Trước hết là tính bảo mật, công cụ z0 Gravity đã nhanh chóng được xác nhận bởi nhóm Orange Cyberdefense.3'),
-(169, 'vi_VN', 'Pres', 27, 'dress', 'Dịch vụ khách hàng PMO Orange South West3'),
-(170, 'vi_VN', 'Pres', 27, 'author', 'Stephane Touchet3');
+(168, 'vi_VN', 'Pres', 27, 'about_pres', 'aaaaaa'),
+(169, 'vi_VN', 'Pres', 27, 'dress', 'aaaaaa'),
+(170, 'vi_VN', 'Pres', 27, 'author', 'aaaaaa');
 
 -- --------------------------------------------------------
 
@@ -389,6 +394,7 @@ INSERT INTO `pres_i18n` (`id`, `locale`, `model`, `foreign_key`, `field`, `conte
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL,
@@ -400,9 +406,9 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `role`, `created`, `modified`) VALUES
-(9, 'abc@gmail.com', '$2y$10$fBu9pNjhWJEzJrna9CQznugL3W9XFzwxSgbJdjPEDp1ehpLC.RKiG', 'author', '2022-09-08 16:53:11', '2022-10-12 07:44:40'),
-(12, '123@gmail.com', '$2y$10$Qd4155eHWvO9BolRUFYn2eTEAJGsgfO8NXX/eOc0ODeMJqBAEotVS', 'admin', '2022-10-12 07:40:52', '2022-10-12 07:40:52');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created`, `modified`) VALUES
+(9, 'huynh xuan anh', 'abc@gmail.com', '$2y$10$fBu9pNjhWJEzJrna9CQznugL3W9XFzwxSgbJdjPEDp1ehpLC.RKiG', 'author', '2022-09-08 16:53:11', '2022-10-12 07:44:40'),
+(12, 'xuananh', '123@gmail.com', '$2y$10$Qd4155eHWvO9BolRUFYn2eTEAJGsgfO8NXX/eOc0ODeMJqBAEotVS', 'admin', '2022-10-12 07:40:52', '2022-10-12 07:40:52');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -421,6 +427,20 @@ ALTER TABLE `aticles_i18n`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `ARTICLES_I18N_LOCALE_FIELD` (`locale`,`model`,`foreign_key`,`field`),
   ADD KEY `ARTICLES_I18N_FIELD` (`model`,`foreign_key`,`field`);
+
+--
+-- Chỉ mục cho bảng `bars`
+--
+ALTER TABLE `bars`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `bars_i18n`
+--
+ALTER TABLE `bars_i18n`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `BARS_I18N_LOCALE_FIELD` (`locale`,`model`,`foreign_key`,`field`),
+  ADD KEY `BARS_I18N_FIELD` (`model`,`foreign_key`,`field`);
 
 --
 -- Chỉ mục cho bảng `displays`
@@ -497,7 +517,19 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT cho bảng `aticles_i18n`
 --
 ALTER TABLE `aticles_i18n`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=344;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=364;
+
+--
+-- AUTO_INCREMENT cho bảng `bars`
+--
+ALTER TABLE `bars`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `bars_i18n`
+--
+ALTER TABLE `bars_i18n`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `headers`

@@ -89,10 +89,7 @@ $cakeDescription = 'zogravity';
                 <div class="top">
                      <div class="header_container" >
 
-                            <?= $this->Html->image($display->image_header) ?>
-
-
-
+                            <?= $this->Html->image($display->image_header)?>
                                 <div class="container_title">
                                         <h1 class="font_blue" style="color: <?= $display['color_header'] ?>;">  <?= $header['title']?></h1>
 
@@ -113,16 +110,16 @@ $cakeDescription = 'zogravity';
                     </div>
                 </div>
                      <?= $this->Html->script('open_video.js') ?>
+                   <?php endforeach; ?>
 
         <div class="list_slider">
 
 
 
 
-
                        <div class="list_item">
 
-        <?php endforeach; ?>
+
 
 
                             <div class="slider_content">

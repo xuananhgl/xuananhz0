@@ -53,11 +53,7 @@
         display: flex;
      }
 
-    center{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 
     .header_menu{
 
@@ -211,8 +207,6 @@
          color: #041839;
          opacity: 1;
          overflow: hidden;
-
-
      }
      .container_button{
          margin-bottom: 20px;
@@ -252,18 +246,11 @@
     .slider1{
         border: #000 2px solid;
         width: 1571px;
-        /* height: 422px; */
         display: flex;
         justify-content: center;
         align-items: center;
         display: block;
     }
-    .list_item{
-        /* height: 480px; */
-
-    }
-
-
     .slide_box2{
         width: 500px;
         height: 422px;
@@ -300,8 +287,6 @@
         text-transform: uppercase;
         opacity: 1;
     }
-
-
     .slider_about{
         width: 950px;
         height: 68px;
@@ -319,8 +304,6 @@
         height: 80px;
         background:  0% 0% no-repeat padding-box;
         opacity: 1;
-
-
     }
     .slider_h1>img{
         width: 220px;
@@ -406,8 +389,6 @@
 
 
     #content{
-
-     /* height: 1200px; */
      background: #041839 0% 0% no-repeat padding-box;
     }
     .content_pfc{
@@ -419,7 +400,6 @@
         justify-content: space-around;
         box-sizing: border-box;
         align-items: center;
-
     }
     .content_pfc_titel{
        font-family:Poppins-Bold;
@@ -441,7 +421,6 @@
         font-size: 26px;
         padding-left: 76px;
         line-height: 38px;
-
     }
     .content_layout{
         width: 1034px;
@@ -464,8 +443,6 @@
     .content_layot_text .p{
          width: 470px;
         font-size: 25px;
-
-
     }
     .content_layot_text .last{
         font-size: 25px;
@@ -494,7 +471,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
     .content_about_title{
         width: 750px;
@@ -550,13 +526,11 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
         height: 676px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         opacity: 1
     }
-
     .news_vous_title{
         width: 301px;
         height: 56px;
@@ -568,13 +542,11 @@
         margin-top: 110px;
         margin-bottom:30px;
         font-family:Poppins-SemiBold ;
-
     }
     .news_vous{
         display: flex;
         gap: 39px;
     }
-
     .news_vous_go{
         width: 318px;
         height: 343px;
@@ -583,9 +555,9 @@
         border-radius: 15px;
         opacity: 1;
         box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
     }
     .vous_go_item{
@@ -605,12 +577,10 @@
         letter-spacing: 0px;
         color: #049BF7;
     }
-
     .vous_go_about p{
         margin: 0px 21px;
         font-size: 20px;
        line-height: 25px;
-
     }
     .vous_go_button{
         width: 237px;
@@ -631,9 +601,9 @@
         border-radius: 15px;
         opacity: 1;
         box-sizing: border-box;
-            display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+        display: flex;
+       flex-direction: column;
+       justify-content: space-between;
     }
     .vous_comment_item{
         margin-top: 20px;

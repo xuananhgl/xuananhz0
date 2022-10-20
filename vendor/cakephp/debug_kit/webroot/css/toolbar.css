@@ -154,7 +154,6 @@ strong {
  */
 #panel-content-container {
 	background: #fff;
-	display: none;
 	position: absolute;
 	top: 100%;
 	bottom: 40px;

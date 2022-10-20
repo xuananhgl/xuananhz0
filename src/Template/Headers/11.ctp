@@ -1,426 +1,379 @@
-<!-- File: src/Template/Articles/index.ctp -->
-
-
-
-
-
-<!--  -->
-
-
-
-<?php foreach ($displays as $display): ?>
-
-
-
-
-
-
 <?php
-$cakeDescription = 'zogravity';
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>
-    </title>
-
-
-    <?= $this->Html->css('zogravity.css') ?>
-
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="/img/">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<body>
-
-<div id="main">
-
-        <div id ="header">
-            <div class="header_menu">
-                <div class="zg_logo"><?= $this->Html->image('logo1.png') ?>
-                    </div>
-                   <div class="bar_mobile">
-                                    <i class="fa-solid fa-bars js-open-bar"></i>
-
-
-                                    <div class="list_menu js-bar">
-                                        <i class="fa-solid fa-xmark js-close-bar"></i>
-                                        <div class="o"><?= $this->Html->image('logo1.png') ?></div>
-                                        <div class="l"><a href="#"><?= __('ENTREPRISES') ?></a></div>
-                                        <div class="l"><a href="#"><?= __('SECTEUR PUBLIC') ?></a></div>
-                                        <div class="l"><a href="#"><?= __('À PROPOS') ?></a></div>
-                                        <div class="l"><a href="#"><?= __('CONTACT') ?></a></div>
-                                        <div class="l"><a href="#"><?= __('BLOG') ?></a></div>
-                                        <!-- <div class="l"><a href="http://localhost:8765/users/login"><?= __('LOGIN') ?></a> -->
-
-
-                                        </div>
-                            </div>
-
-                        </div>
-            </div>
-            <?= $this->Html->script('slider.js') ?>
-
-
-
-        </div>
-
-           <?php foreach ($headers as $header): ?>
-
-<!-- ====================================================================================================================== -->
-    <div id="lider" style="background-color:<?= $display['backgroun_header'] ?>">
-
-
-                                <div class="video js-video">
-                                    <button class="bnt_video js-close-video">  <i class="fa-solid fa-xmark " style="cursor: pointer;"></i> </i></button>
-                                            <div class="set_video">
-                               <iframe width="1024" height="445" src="https://www.youtube.com/embed/taXeGw-L3dY" title="Tin An Ninh Trật Tự Nóng Mới Nhất 24h Sáng 12/10/2022 | Tin Tức Thời Sự Việt Nam Mới Nhất | ANTV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-
-
-                    </div>
-                <div class="top">
-                     <div class="header_container" >
-
-                            <?= $this->Html->image($display->image_header) ?>
-
-
-
-                                <div class="container_title">
-                                        <h1 class="font_blue" style="color: <?= $display['color_header'] ?>;">  <?= $header['title']?></h1>
-
-
-                                <div class="container_about">
-                                    <p style="color: <?= $display['color_header'] ?>;"><?= $header['about']?></p>
-                                </div>
-                                <div class="container_button">
-                                    <a href="" style="color: <?= $display['color_header'] ?>;"><?= $header['button']?></a>
-                                </div>
-                                <div class="container_item">
-                                     <button class="js-open-video"><i class="fa-solid fa-circle-play"></i><div class="item_vd">
-                                            <p style="color: <?= $display['color_header'] ?>;"><?= __('voir la vidéo') ?></p>
-                                    </button>
-                                </div>
-                            </div>
-
-                    </div>
-                </div>
-                     <?= $this->Html->script('open_video.js') ?>
-
-        <div class="list_slider">
-
-
-
-
-
-                       <div class="list_item">
-
-        <?php endforeach; ?>
-
-
-                            <div class="slider_content">
-                                <div class="slider_titel"><p><?=$pre[0]['title_pres'] ?></p>
-                                    <div class="next_pre">
-                                            <div class="slider_next next" > <i class="fa-solid fa-angle-left"></i></div>
-                                            <div class="slider_pre prev" ><i class="fa-solid fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                                    <div class="slider_h1"><?= $this->Html->image($pre[0]['logo'])?></div>
-                                    <div class="slider_about"><?= __($pre[0]['about_pres'])?></div>
-                                    <div class="slider_note">
-                                        <div class="note"><a href="" style="color:#000";><?= $pre[0]['author']?></a><br><a><?= $pre[0]['dress']?></a></div>
-                                        <div class="cycle"><a href="<?= $pre[0]['link']?>" style="color:#000";><?=__('Lire l’article')  ?>   <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-                                    </div>
-
-
-
-             </div>
-
-
-    </div>
-
-    <!-- ============== -->
-
-
-
-    <div class="list_item">
-
-
-
-
-
-            <div class="slider_content">
-                <div class="slider_titel"><p><?=$pre[1]['title_pres']?></p>
-                    <div class="next_pre">
-                            <div class="slider_next next" > <i class="fa-solid fa-angle-left"></i></div>
-                            <div class="slider_pre prev" ><i class="fa-solid fa-angle-right"></i></div>
-                    </div>
-                </div>
-                    <div class="slider_h1"><?= $this->Html->image($pre[1]['logo'])?></h1></div>
-                    <div class="slider_about"><?= __($pre[1]['about_pres'])?></div>
-                    <div class="slider_note">
-                        <div class="note"><a href="" style="color:#000";><?= $pre[1]['author']?></a><br><a><?= $pre[1]['dress']?></a></div>
-                                        <div class="cycle"><a href="<?= $pre[1]['link']?>" style="color:#000";><?=__('Lire l’article')?><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-                     </div>
-
-            </div>
-
-
-
-
-
-
-    </div>
-
-    <!-- ============ -->
-
-
-    <div class="list_item">
-
-
-
-
-             <div class="slider_content">
-                <div class="slider_titel"><p><?=$pre[2]['title_pres'] ?></p>
-                    <div class="next_pre">
-                            <div class="slider_next next" ><i class="fa-solid fa-angle-left"></i></div>
-                            <div class="slider_pre prev" ><i class="fa-solid fa-angle-right"></i></div>
-                    </div>
-                </div>
-                    <div class="slider_h1"><?= $this->Html->image($pre[2]['logo'])?></h1></div>
-                    <div class="slider_about"><?= __($pre[2]['about_pres'])?></div>
-                    <div class="slider_note">
-                        <div class="note"><a href="" style="color:#000";><?= $pre[2]['author']?></a><br><a><?= $pre[2]['dress']?></a></div>
-                                        <div class="cycle"><a href="<?= $pre[2]['link']?>" style="color:#000";><?=__('Lire l’article')?><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
-                     </div>
-
-            </div>
-
-
-
-
-
-
-    </div>
-</div>
-
-
-    <script>
-    $(document).ready(function(){
-    $('.list_slider').slick({
-    prevArrow: $('.prev'),
-    nextArrow: $('.next'),
+// src/Controller/HeadersController.php
+
+namespace App\Controller;
+use App\Controller\AppController;
+use Cake\ORM\Behavior\Translate\TranslateTrait;
+use Cake\I18n\I18n;
+class InterfacesController extends AppController
+{
+
+    public function initialize()
+    {
+        parent::initialize();
+          $this->loadModel('Posts');
+        $this->loadModel('Headers');
+        $this->loadModel('Pres');
+        $this->loadModel('Pouss');
+        $this->loadModel('Articles');
+        $this->loadModel('Users');
+        $this->loadComponent('Flash'); // Include the FlashComponent
+    }
+    public function home(){
+
+                        $user = $this->Users->get(  $this->request->session()->read('Auth.User.id'));
+                        $this->set('user', $user);
+                        $posts= $this->Posts->find('all');
+                        $this->set(compact('posts'));
+                            foreach ($posts as $post)
+
+                        $query = $this->Headers->find(
+                                'all', [
+
+                                    'limit'=>4,
+                                ]
+                            );
+                        $query->enableHydration(false);
+                        $header = $query->toList();
+                        $this->set(compact('header'));
+
+                            // var_dump();
+
+                                                  // exit;
+                                // ==================================================================
+
+
+                          $this->loadModel('Pres');
+                          $query = $this->Pres->find(
+                              'all', ['limit'=>3]);
+                          $query->enableHydration(false);
+                          $pres = $query->toList();
+                          // debug($pre[0]['id']);
+                          $this->set(compact('pres'));
+
+                          // =============================================================================
+                          $this->loadModel('Pours');
+                          $pours= $this->Pours->find(
+                              'all', [
+                                  'order'=> 'rand()',
+                                  'limit'=>1,
+                              ]
+                          );
+                          $this->set(compact('pours'));
+
+
+                          $this->loadModel('Articles');
+                          $query = $this->Articles->find(
+                              'all', [
+
+                                  'limit'=>4,
+                              ]
+                          );
+                          $query->enableHydration(false);
+                          $article = $query->toList();
+                              $this->set(compact('article'));
+
+                              $this->loadModel('Bars');
+                              $bars= $this->Bars->find('all');
+                              $this->set(compact('bars'));
+                              foreach ($bars as $bar)
+
+                              $this->loadModel('Displays');
+                              $displays= $this->Displays->find(
+                                   'all', [
+                                  'order'=> 'rand()',
+                                  'limit'=>1,
+                              ]
+                              );
+                              $this->set(compact('displays'));
+                              foreach ($displays as $display)
+
+                                // ============================================
+                                  $pre = $this->Pres->get($pres[0]['id'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+                                  $pre1 = $this->Pres->get($pres[1]['id'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+                                  $pre2 = $this->Pres->get($pres[2]['id'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+                                  $display = $this->Displays->get($display['id']);
+
+                                  // GET ID ARTCLE
+                                  $article1 = $this->Articles->get($article[0]['id_article'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+                                  $article2 = $this->Articles->get($article[1]['id_article'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+                                  $article3 = $this->Articles->get($article[2]['id_article'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+                                  $article4 = $this->Articles->get($article[3]['id_article'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+                                  $header = $this->Headers->get($header[0]['id_headers'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+
+
+                                  $post = $this->Posts->get($post['id_posts']);
+
+
+                                // debug($pre);
+                                // debug($pre1);
+                                // debug($pre2 );
+                                // debug($article1);
+                                // debug($article2);
+                                // debug($article3);
+                                // debug($article4);
+                                // debug($header);
+                                // debug($bar);
+
+                                // exit;
+                                  $bar = $this->Bars->get($bar['id'], [
+                                      'finder' => 'translations',
+                                                                  ]);
+
+
+
+
+
+                                      // DATA PRESS
+                               if ($this->request->is(['post', 'put'])) {
+
+                                 $data = [
+                                      'title_pres' => $this->request->getData('title_pres1'),
+                                      'author' => $this->request->getData('author1'),
+                                      'dress' => $this->request->getData('dress1'),
+                                      'logo' => $this->request->getData('logo1'),
+                                      'link' => $this->request->getData('link1'),
+                                      'about_pres' => $this->request->getData('about_pres1'),
+                                   ];
+                                 $data1 = [
+                                     'title_pres' => $this->request->getData('title_pres2'),
+                                     'author' => $this->request->getData('author2'),
+                                     'dress' => $this->request->getData('dress2'),
+                                     'logo' => $this->request->getData('logo2'),
+                                     'link' => $this->request->getData('link2'),
+                                     'about_pres' => $this->request->getData('about_pres2'),
+                                     ];
+                                     // debug($data1);
+                                     // exit;
+                                       //  DATA ARTICLE
+                                 $data2 = [
+                                      'title' => $this->request->getData('title1'),
+                                      'link' => $this->request->getData('link1'),
+                                      'body' => $this->request->getData('body1'),
+                                      'about' => $this->request->getData('about1'),
+                                       ];
+                                 $data3 = [
+                                       'title' => $this->request->getData('title2'),
+                                       'link' => $this->request->getData('link2'),
+                                       'body' => $this->request->getData('body2'),
+                                       'about' => $this->request->getData('about2'),
+                                       ];
+                                 $data4 = [
+                                       'title' => $this->request->getData('title3'),
+                                       'link' => $this->request->getData('link3'),
+                                       'body' => $this->request->getData('body3'),
+                                       'about' => $this->request->getData('about3'),
+                                           ];
+                                 $data5 = [
+                                       'title' => $this->request->getData('title4'),
+                                       'link' => $this->request->getData('link4'),
+                                       'body' => $this->request->getData('body4'),
+                                       'about' => $this->request->getData('about4'),
+                                         ];
+                                 $data6 = [
+                                       'backgroun_header' => $this->request->getData('backgroun_header'),
+                                       'color_header' => $this->request->getData('color_header'),
+                                       'color_prou' => $this->request->getData('color_prou'),
+                                       'image_pour' => $this->request->getData('image_pour'),
+                                       'image_header' => $this->request->getData('image_header'),
+                                       'color_button' => $this->request->getData('color_button'),
+
+                                         ];
+                                         $header->translation('vi_VN')->author = $this->request->getData('vi_title');
+                                         $header->translation('vi_VN')->dress = $this->request->getData('vi_about');
+                                         $header->translation('vi_VN')->about_headers = $this->request->getData('vi_button');
+
+                                         $header->translation('es')->author = $this->request->getData('vi_author1');
+                                         $header->translation('es')->dress = $this->request->getData('vi_dress1');
+                                         $header->translation('es')->about_pres = $this->request->getData('vi_about_pres1');
+
+                                         $header->translation('en_US')->author = $this->request->getData('vi_author2');
+                                         $header->translation('en_US')->dress = $this->request->getData('vi_dress2');
+                                         $header->translation('en_US')->about_pres = $this->request->getData('vi_about_pres2');
+
+
+
+                                       $pre->translation('vi_VN')->author = $this->request->getData('vi_author');
+                                       $pre->translation('vi_VN')->dress = $this->request->getData('vi_dress');
+                                       $pre->translation('vi_VN')->about_pres = $this->request->getData('vi_about_pres');
+
+                                       $pre1->translation('vi_VN')->author = $this->request->getData('vi_author1');
+                                       $pre1->translation('vi_VN')->dress = $this->request->getData('vi_dress1');
+                                       $pre1->translation('vi_VN')->about_pres = $this->request->getData('vi_about_pres1');
+
+                                       $pre2->translation('vi_VN')->author = $this->request->getData('vi_author2');
+                                       $pre2->translation('vi_VN')->dress = $this->request->getData('vi_dress2');
+                                       $pre2->translation('vi_VN')->about_pres = $this->request->getData('vi_about_pres2');
+
+
+                                     $this->Pres->patchEntity($pre, $this->request->getData());
+                                     $this->Pres->patchEntity($pre1, $data);
+                                     $this->Pres->patchEntity($pre2, $data1);
+                                     $this->Headers->patchEntity($header, $this->request->getData());
+                                     $this->Articles->patchEntity($article1, $data2);
+                                     $this->Articles->patchEntity($article2, $data3);
+                                     $this->Articles->patchEntity($article3, $data4);
+                                     $this->Articles->patchEntity($article4, $data5);
+                                     $this->Displays->patchEntity($display, $data6);
+                                     $this->Bars->patchEntity($bar, $this->request->getData());
+                                     $this->Posts->patchEntity($post, $this->request->getData());
+                                     // debug($pre);
+                                     // debug($pre1);
+                                     // debug($pre2);
+                                     // exit;
+                                   if ($this->Pres->save($pre) && $this->Pres->save($pre1) && $this->Pres->save($pre2) && $this->Headers->save($header)
+                                       && $this->Articles->save($article1) && $this->Articles->save($article2) && $this->Articles->save($article3)
+                                       && $this->Articles->save($article4) && $this->Displays->save($display) && $this->Bars->save($bar) && $this->Posts->save($post)) {
+                                       $this->Flash->success(__('Your header has been updated.'));
+                                       return $this->redirect(['action' => 'home']);
+                                   }
+                                   $this->Flash->error(__('Unable to update your header.'));
+                               }
+                               debug($header->translation('vi_VN')->title);
+
+                                      $this->set('header', $header);
+                                      $this->set('pre', $pre);
+                                      $this->set('pre1', $pre1);
+                                      $this->set('pre2', $pre2);
+                                      $this->set('article1', $article1);
+                                      $this->set('article2', $article2);
+                                      $this->set('article3', $article3);
+                                      $this->set('article4', $article4);
+                                      $this->set('display', $display);
+                                      $this->set('bar', $bar);
+                                      $this->set('post', $post);
+
+    }
+       public function index()
+            {
+                                    $posts = $this->Posts->find('all');
+                                    $this->set(['posts' => $posts]);
+                                    $query = $this->Articles->find('all');
+                                    $query->enableHydration(false);
+                                    $article = $query->toList();
+
+                                        $this->set(compact('article'));
+
+                                      $pres = $this->Pres->find( 'all', [
+                                                          'order'=> 'rand()',
+                                                          'limit'=>3,
+                                                      ]);
+                                      $this->set([
+                                          'pres' => $pres,
+                                          '_serialize' => ['pres']
+                                      ]);
+
+                                  }
+
+                                  public function view($id)
+                                  {
+                                      $pre = $this->Pres->get($id);
+                                      $this->set([
+                                          'pre' => $pre,
+                                          '_serialize' => ['pre']
+                                    ]);
+          }
+
+
+    public function add()
+    {
+              $user = $this->Users->get(  $this->request->session()->read('Auth.User.id'));
+              $this->set('user', $user);
+              $posts = $this->Posts->find('all');
+              $this->set(['posts' => $posts]);
+              $article = $this->Articles->newEntity($this->request->getData());
+              if ($this->request->is('post')) {
+              $translations = [
+
+                              // TIENG ANH
+                  'en_US' => ['about' => $this->request->getData('_translations.en_US.about')],
+                  'en_US' => ['body' => $this->request->getData('_translations.en_US.body')],
+                  'en_US' => ['title' => $this->request->getData('_translations.en_US.title')],
+
+                              // TAY BAN NHA
+                  'es' => ['about' => $this->request->getData('_translations.es.about')],
+                  'es' => ['body' => $this->request->getData('_translations.es.body')],
+                  'es' => ['title' => $this->request->getData('_translations.es.title')],
+
+                              // TIENGVIET
+                  'vi_VN' => ['about' => $this->request->getData('_translations.vi_VN.about')],
+                  'vi_VN' => ['body' => $this->request->getData('_translations.vi_VN.body')],
+                  'vi_VN' => ['title' => $this->request->getData('_translations.vi_VN.title')]
+              ];
+
+
+              foreach ($translations as $lang => $data) {
+                  $article->translation($lang)->set($data, ['guard' => false]);
+              }
+
+
+              if ($this->Articles->save($article)) {
+                  $this->Flash->success(__('Your article has been saved.'));
+                  return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+              }
+              $this->Flash->error(__('Unable to add your article.'));
+              }
+              $this->set('article', $article);
+          }
+
+
+
+    public function edit($id = null)
+    {
+      $user = $this->Users->get(  $this->request->session()->read('Auth.User.id'));
+      $this->set('user', $user);
+      $posts= $this->Posts->find(
+          'all', [
+              'order'=> 'rand()',
+              'limit'=>1,
+          ]
+      );
+      $this->set(compact('posts'));
+      $post = $this->Posts->get(1);
+      if ($this->request->is(['post', 'put'])) {
+        $this->Posts->patchEntity($post, $this->request->getData());
+        if ($this->Posts->save($post)) {
+        $this->Flash->success(__('ban co the chinh sua truoc khi luu.'));
+        return $this->redirect(['action' => 'add']);
+        }
+        $this->Flash->error(__('Unable to update your post.'));
+        }
+      $this->set('post', $post);
+  }
+
+
+    public function delete($id)
+    {
+        $this->request->allowMethod(['delete']);
+        $pre = $this->Pres->get($id);
+        $message = 'Deleted';
+        if (!$this->Pres->delete($pre)) {
+            $message = 'Error';
+        }
+        $this->set([
+            'message' => $message,
+            '_serialize' => ['message']
+        ]);
     }
 
-    );
-    });;
-    </script>
-
-</div>
 
 
 
 
-     <!-- ========================================================================================================================================    -->
-<?php foreach ($pours as $pour): ?>
-        <div id="content">
-            <div class="content_pfc">
-                <div class="content_pfc_titel"><?= $pour['logo'] ?></div>
-                <div class="content_pfc_text">
-                <h4 style="color:#fff";> <?= $pour['title'] ?>  </h4></div>
-            </div>
-            <div class="content_layout">
-                <div class="content_layot_text">
-                    <div class="fr"><h1 style="color:#fff"><?= $pour['Notre_engagement'] ?></h1></div>
-                    <div class="p"><p><?= $pour['about_notre'] ?></p></div>
-                    <div class="last"><h1><?= $pour['note'] ?></h1></div>
-
-                </div>
-                <div class="content_layout_inset"><?= $this->Html->image('mo.png') ?></div>
-                <div class="content_layot_img"><?= $this->Html->image($display['image_pour']) ?></div>
-            </div>
-            <div class="content_about">
-                <div class="content_about_title"><?=__('Découvrez l’univers z0 Gravity')  ?></div>
-                <div class="content_about_text"><?=__('Plannings, budgets, calendriers…En un clin dœil, vous avez une vision globale et stratégique de lavancée de vos projets en temps réel !') ?>
-                </div>
-                <div class="conteant_about_button"><i class="fa-solid fa-play"></i> <a href="<?= $pour['link'] ?>"><?=__('Présentation')?> vidéo </a></div>
-            </div>
-            <div class="content_app">
-            <?= $this->Html->image('app.jpg') ?>
-            </div>
-
-        </div>
-
-
-
-        <div id="news">
-            <div class="news1">
-                <div class="news_vous_title"><?= __('Vous êtes…') ?></div>
-                <div class="news_vous">
-
-                    <div class="news_vous_go">
-                        <div class="vous_go_item"><i class="fa-solid fa-file-signature" style="color:#049BF7 ;"></i></div>
-                        <div class="vous_go_about"><h2><?= __('Une entreprise') ?></h2><p> <?= __('Jouez collectif fédérez vos équipes autour dun objectif commun.') ?></p></div>
-                        <div class="vous_go_button"><a href="" style="color: #fff; text-decoration: none;"><?= __('3,2,1… Go !') ?></a></div>
-                    </div>
-                    <div class="news_vous_comment">
-                        <div class="vous_comment_item"><i class="fa-solid fa-hospital" style="color:#FF7D66 ;"></i></div>
-                        <div class="vous_comment_about"><h2><?= __('Une collectivité') ?></h2><p><?= __('Rassemblez les acteurs de <br>votre projet via un logiciel commun !') ?></p></div>
-                        <div class="vous_comment_button"><a href="" style="color: #fff; text-decoration: none;"><?= __('Découvrez comment') ?></a></div>
-                    </div>
-                    <div class="news_vous_commemcons">
-                        <div class="vous_commemcons_item"><i class="fa-solid fa-map-location-dot" style="color:#FFD051 ;"></i></div>
-                        <div class="vous_commemcons_about"><h2><?= __('Un promeneur') ?></h2><p><?= __('égaré Bienvenue !<br> Installez-vous et laissez-vous guider.') ?></p></div>
-                        <div class="vous_commemcons_button"><a href="" style="color: #fff; text-decoration: none;"><?= __('Commençons par ici') ?></a></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="news_nos">
-                <div class="nos_title"><h1><?= __('Nos articles') ?></h1></div>
-                <div class="nos_content">
-                    <div class="conten_nos1">
-                        <div class="conten_nos1_img"><?= $this->Html->image($article[0]['img']) ?></div>
-                        <div class="conten_nos1_caption"><?= $article[0]['title'] ?></div>
-
-                        <div class="conten_nos1_time">
-                            <div class="conten_nos1_note"><?= $article[0]['about']?></div>15 min
-                        </div>
-                        <div class="conten_nos1_about"><?= $article[0]['body'] ?></div>
-                        <div class="conten1 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
-                    </div>
-                    <div class="conten_nos2">
-                        <div class="conten_nos2_img"><?= $this->Html->image( $article[1]['img'] ) ?></div>
-                        <div class="conten_nos2_char">
-                            <div class="conten_nos2_caption"><?= $article[1]['title'] ?></div>
-
-                            <div class="conten_nos2_time">
-                                <div class="conten_nos2_note"><?= $article[1]['about'] ?></div>10 min
-                            </div>
-                            <div class="conten_nos2_about"><?= $article[1]['body'] ?></div>
-                            <div class="conten2 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
-                        </div>
-                    </div>
-                    <div class="conten_nos4">
-
-                        <div class="conten_nos4_caption"><?= $article[2]['title'] ?></div>
-
-                        <div class="conten_nos4_time">
-                            <div class="conten_nos4_note"><?= $article[2]['about'] ?></div>8 min
-
-                        </div>
-                        <div class="conten_nos4_about"><?= $article[2]['body'] ?></div>
-                        <div class="conten4 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
-                    </div>
-
-                    <div class="conten_nos3">
-
-                        <div class="conten_nos3_caption"><?= $article[3]['title'] ?></div>
-
-                        <div class="conten_nos3_time">
-                            <div class="conten_nos3_note"><?= $article[3]['about'] ?></div>12 min
-                        </div>
-                        <div class="conten_nos3_about"><?= $article[3]['body'] ?></div>
-                        <div class="conten3 nos_btn"><a href="<?= $article[1]['link'] ?>"><?= __('Lire l’article') ?></a></div>
-                    </div>
-                </div>
-                <div class="button_content1 button"><a href=""><?= __('Voir tous les articles') ?></a></div>
-                <div class="conten_titlel_last">
-                    <h1><?= __('Assez parlé de nous.') ?></h1>
-                      <p><?= __('Parlez-nous de vous !') ?></p>
-                </div>
-                <div class="button_content2 button"><a ><?= __('On discute !') ?></a></div>
-            </div>
-        </div>
-
-
-    <div id="footer">
-        <div class="bottom"
-            <div class="footer_menu">
-                <div class="footer_logo">
-                    <div class="logo_img"><img src="https://www.z0gravity.com/storage-z0G/2019/05/z0_Gravity_Logo_BlancBleu-1.svg" alt=""></div>
-                    <div class="logo_slogan"><?= __('Ensemble, on va plus loin.') ?></div>
-                </div>
-                <div class="footer_list">
-                    <ul>
-                        <li><?= __('Entreprises') ?></li>
-                        <li><?= __('Collectivités') ?></li>
-                        <li><?= __('À PROPOS') ?></li>
-                        <li><?= __('CONTACT') ?></li>
-                        <li><?= __('BLOG') ?></li>
-                    </ul>
-                </div>
-                <div class="footr_infor">
-                    <div class="infor_img">
-                        <div class="information"><?= __('SUIVEZ-NOUS') ?></div>
-                        <div class="img_info"><i class="fa-brands fa-facebook-f"></i>
-                                              <i class="fa-brands fa-twitter"></i>
-                                              <i class="fa-brands fa-vimeo-v"></i>
-                        </div>
-                    </div>
-                    <div class="setting "><button class="js-open-model" > <i class="fa-solid fa-earth-asia"> </i><?= __('changer de région') ?></button></div>
-                </div>
-            </div>
-            <div class="footer_last">
-                    <a><?= __('© 2019 Globalsi SAS') ?></a>
-                     <a><?= __('Plan du site') ?></a>
-                    <a><?= __('Contactez-nous') ?></a>
-                    <a><?= __('Mentions légale') ?></a>
-            </div>
-        </div>
-    </div>
-        <div class="model js-model">
-            <div class="set_changer">
-                <div class="chenger_tille">
-                    <h2><?= __('aaa') ?></h2>
-                    <i class="fa-solid fa-xmark js-close-model" style="cursor: pointer;"></i>
-                </div>
-                <div class="chenger_about">
-                    <?= __('Si vous sélectionnez une autre région, la langue et le contenu de z0gravity.com changeront.') ?>
-                </div>
-                <div class="langue">
-
-
-                    <ul>
-                    <div class="ul">
-                        <li> <a href="http://localhost:8765/headers/?locale=es">Français </a> </li>
-                      <li><a href="http://localhost:8765/headers/?locale=en_US">English </a> </li>
-                         <li><a href="http://localhost:8765/headers/?locale=vi_VN">tiengviet</a> </li>
-                    </div>
-                    <div class="ul">
-                        <li> Deutsch</li>
-                        <li>Nederlands</li>
-                        <li>Polski </li>
-
-                    </div>
-                    <div class="ul">
-                        <li>Русский</li>
-                        <li>Bokmål</li>
-                        <li>Ελληνικά </li>
-                    </div>
-                    <div class="ul">
-                        <li>Português </li>
-                        <li>日本語</li>
-                        <li>繁體中文</li>
-                    </div>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <?= $this->Html->script('changer.js') ?>
-
-
-</body>
-</html>
-
-<?php endforeach; ?>
-<?php endforeach; ?>
+}
