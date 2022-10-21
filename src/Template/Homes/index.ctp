@@ -98,7 +98,7 @@ $cakeDescription = 'zogravity';
                                     <p style="color: <?= $display['color_header'] ?>;"><?= $header['about']?></p>
                                 </div>
                                 <div class="container_button">
-                                    <a href="" style="color: <?= $display['color_header'] ?>;"><?= $header['button']?></a>
+                                    <a href="" style="color: <?= $display['color_header'] ?>;"><?= $header['conten_button']?></a>
                                 </div>
                                 <div class="container_item">
                                      <button class="js-open-video"><i class="fa-solid fa-circle-play"></i><div class="item_vd">
