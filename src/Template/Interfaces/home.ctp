@@ -308,10 +308,10 @@ $cakeDescription = 'zogravity';
 
 
                             <div class="news_nos">
-                                <div class="nos_title"><h1><?= __('Nos articles') ?></h1></div>
+                                <div class="nos_title"><h1><?= __('Nos articles') ?></h1>  <i class="fa-solid fa-pen" id="js_open_article"></i></div>
                                 <div class="new">
 
-                                    <i class="fa-solid fa-pen" id="js_open_article"></i>
+
 
                                 </div>
                                 <div class="nos_content">
@@ -903,7 +903,7 @@ $cakeDescription = 'zogravity';
                       </script>
 
                                   <div class="news_nos">
-                                      <div class="nos_title"><h1><?= __('Nos articles') ?></h1></div>
+                                  
                                       <div class="new">
                                       </div>
                                       <div class="over_Article">
@@ -1248,17 +1248,7 @@ $cakeDescription = 'zogravity';
                                       closeArticle .addEventListener('click', hideArticle)
 
                                     </script>
-                                    <div class="customize_articles">
 
-
-                                    </div>
-                                  </div>
-                                      <div class="button_content1 button"><a href=""><?= __('Voir tous les articles') ?></a></div>
-                                      <div class="conten_titlel_last">
-                                          <h1><?= __('Assez parlé de nous.') ?></h1>
-                                            <p><?= __('Parlez-nous de vous !') ?></p>
-                                      </div>
-                                      <div class="button_content2 button"><a ><?= __('On discute !') ?></a></div>
 
                               </div>
                               </div>
