@@ -1,379 +1,348 @@
-<?php
-// src/Controller/HeadersController.php
+<?php foreach ($displays as $display): ?>
+<?php foreach ($headers as $header): ?>
+ <!doctype html>
+<html lang="en">
 
-namespace App\Controller;
-use App\Controller\AppController;
-use Cake\ORM\Behavior\Translate\TranslateTrait;
-use Cake\I18n\I18n;
-class InterfacesController extends AppController
-{
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   
 
-    public function initialize()
-    {
-        parent::initialize();
-          $this->loadModel('Posts');
-        $this->loadModel('Headers');
-        $this->loadModel('Pres');
-        $this->loadModel('Pouss');
-        $this->loadModel('Articles');
-        $this->loadModel('Users');
-        $this->loadComponent('Flash'); // Include the FlashComponent
-    }
-    public function home(){
+</head>
 
-                        $user = $this->Users->get(  $this->request->session()->read('Auth.User.id'));
-                        $this->set('user', $user);
-                        $posts= $this->Posts->find('all');
-                        $this->set(compact('posts'));
-                            foreach ($posts as $post)
+<body class="background-default">
+  <div id="main">
+                    <nav class="navbar navbar-expand-lg navbar-light background-default bg-md-light">
+                      <div class="container-fluid">
+                        <a class="navbar-brand col-5" href="#"><img src="./img/logo1.png"style="width: 200px;" class="image_logo"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                          <div class="navbar-nav font-600">
+                            <a class="nav-link text-black" href="#"><?= __('ENTREPRISES') ?></a>
+                            <a class="nav-link text-black" href="#"><?= __('SECTEUR PUBLIC') ?></a>
+                            <a class="nav-link text-black" href="#"><?= __('À PROPOS') ?></a>
+                            <a class="nav-link text-black" href="#"><?= __('CONTACT') ?</a>
+                            <a class="nav-link text-black" href="#"><?= __('BLOG') ?></a>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+                    <!-- about-header -->
+                    <div class="container-fluid position-relative mt-5">
+                        <div class="row d-flex flex-column">
+                                <div class="heading fw-normal" style="width: 630px;"><?= $header['title']?></div>
+                                <div class="font-600" id="description"><?= $header['about']?></div>
+                                <div class="rounded-5" id="conten_button"><?= $header['conten_button']?></div>
+                                <div class="video_button d-flex mt-2" style="width: 300px;">
+                                  <i class="fa-solid fa-circle-play bg-transparent"></i>
+                                  <p class="bg-transparent">Voir la vidéo</p>
+                                </div>
+                                <div class="fw-normal">
+                                      <img src="./img/d2.png" alt="" class="image_header position-absolute">
+                                </div>
+                        </div>   
+                  </div>
+  </div>       
+    <!-- slider -->
+    <div id="slider">
+        <div class="container-fluid">                                    
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                  <div class=" container-fluid carousel-inner">
+                          <div class="container-fluid carousel-item active">
+                              <div class="row d-flex justify-content-xxl-between justify-content-center">
+                                  <div class="col-md-1 rounded-end d-none d-xxl-block "></div>
+                                  <div class=" border rounded-4 bg-white p-4" id="slider-item1">
 
-                        $query = $this->Headers->find(
-                                'all', [
+                                      <div class="row d-flex position-relative">
+                                          <div class="col-9 text-secondary text-uppercase font-600"><?=$pre[0]['title_pres'] ?</div>
+                                          <div class="col-3 position-absolute end-0 text-end bg-white">                                              
+                                              <button class="prev me-4" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                                    <i class="fa-solid fa-circle-chevron-left text-secondary"></i>                                              
+                                              </button>                                              
+                                              <button class="next " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"> 
+                                                    <i class="fa-solid fa-circle-chevron-right text-secondary"></i>                                            
+                                              </button>                                                                                           
+                                          </div>
+                                      </div>
+                                      <div class=""><?= $this->Html->image($pre[0]['logo'])?></div>
+                                      <div class="h-25 font-600"><?= __($pre[0]['about_pres'])?></div>
+                                      <div class=""><?= $pre[0]['author']?> </div>
+                                      <div class="row text-secondary"> 
+                                          <div class="col-10"><?= $pre[0]['dress']?></div>
+                                          <div class="col-2"><?=__('Lire l’article')  ?> </div>
+                                          
+                                      </div>
+                                    </div>
+                                          <div class="col-md-1  d-none rounded-start d-xxl-block "></div>
+                            </div>
+                          </div>
+                          <div class="container-fluid carousel-item">
+                                <div class="row d-flex justify-content-xxl-between justify-content-center">
+                                  <div class="col-md-1  rounded-end d-none d-xxl-block "></div>
+                                  <div class="border rounded-4 bg-white p-4" id="slider-item2">                                                
+                                      <div class="row d-flex position-relative">
+                                        <div class="col-9 text-secondary text-uppercase"><?=$pre[1]['title_pres']?></div>
+                                            <div class="col-3 position-absolute end-0 text-end bg-white">                                              
+                                                <button class="prev me-4" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                                    <i class="fa-solid fa-circle-chevron-left text-secondary"></i>                                               
+                                                </button>                                              
+                                                <button class="next " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"> 
+                                                    <i class="fa-solid fa-circle-chevron-right text-secondary"></i>                                             
+                                                </button>                                                                                           
+                                            </div>
+                                      </div>
+                                             <div class=""><?= $this->Html->image($pre[1]['logo'])?></div>
+                                               <div class="h-25"><?= __($pre[1]['about_pres'])?></div>
+                                              <div class=""><?= $pre[1]['author']?></div>
+                                              <div class="row text-secondary"> 
+                                                  <div class="col-9"><?= $pre[1]['dress']?></div>
+                                                  <div class="col-3"><?=__('Lire l’article')?></div>      
+                                              </div>
+                                                </div>
+                                                <div class="col-md-1  d-none rounded-start d-xxl-block "></div>
+                                          </div>
+                                        </div>                                    
+                                        <div class="container-fulid carousel-item">
+                                            <div class="row d-flex justify-content-xxl-between justify-content-center">
+                                                <div class="col-md-1  rounded-end d-none d-xxl-block "></div>
+                                                <div class="border rounded-4 bg-white p-4" id="slider-item3">
+                                                   
+                                          <div class="row d-flex position-relative">
+                                            <div class="col-9 text-secondary text-uppercase"><?=$pre[2]['title_pres'] ?></div>
+                                            <div class="col-3 position-absolute end-0 text-end bg-white">                                              
+                                              <button class="prev me-4" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                                <i class="fa-solid fa-circle-chevron-left text-secondary"></i>                                             
+                                              </button>                                              
+                                              <button class="next " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"> 
+                                                <i class="fa-solid fa-circle-chevron-right text-secondary"></i>                                              
+                                              </button>                                                                                           
+                                          </div>
+                                      </div>
+                                                    <div class=""><?= $this->Html->image($pre[2]['logo'])?></div>
+                                                    <div class="h-25"><?= __($pre[2]['about_pres'])?></div>
+                                                    <div class=""><?= $pre[2]['author']?></div>
+                                                    <div class="row text-secondary "> 
+                                                      <div class="col-10 col align-self-end"><?= $pre[2]['dress']?></div>
+                                                      <div class="col-2 col align-self-end"><?=__('Lire l’article')?></div>
+                                                    
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1  d-none rounded-start d-xxl-block "></div>
+                                           </div>                                        
+                                      </div>                                    
+                  </div>              
+                </div>
+        </div>
+    <!-- pours -->
+    <div class="container-fluid margin_top_100 p-0" id="pours">
+      <div class="row body_pours mx-auto">
+      <div class="row justify-content-between align-items-center flex-column flex-md-row gap-5 padding-top-100">
+          <div class="col-10 col-md-1 fs-1 text-center headding_pours">POUR FAIRE COURT.</div>
+          <div class="col-10 fs-4 text-white text-start description_pours">Z0 Gravity est un logiciel de gestion multi-projets : quelle que soit leur complexité, vous gérez facilement 
+            les plannings, les budgets et les ressources humaines de vos projets par un usage transversal et collaboratif.</div>
 
-                                    'limit'=>4,
-                                ]
-                            );
-                        $query->enableHydration(false);
-                        $header = $query->toList();
-                        $this->set(compact('header'));
+      </div>
+      <div class="row mx-auto position-relative p-0 magrin-bottom-400" id="about_pours">
+          <div class="col-md-5 ">
+            <h1 class="text-white sub_title_pours font_bold font_40 margin_top_100 text-center text-md-start">Notre engagement:</h1>
+            <p class="w-md-75 mt-3 dark_blue font_20 text-center text-md-start">C'est aider tout type body'oranisation á resaliser ses projest avec un seul mot body'order :           
+            </p>
+            <h3 class="mt-3 dark_blue font_bold font_40 text-center text-md-start">sim-pli-ci-té!</h3>
+          </div>
+          <div class="position-absolute bottom-0 imgage-over">
+            <img src="./img/mo.png" class="w-50">
+          </div>
+          <div class="col-md-5 p-0 position-absolute end-0">
+            <img src="./img/m1.jpg" class="image_pours w-100 position-absolute">
+          </div>
+      </div>
+      <div class="row d-flex flex-column">
+        <h1 class="text-center text_color_blue ">Découvrez l’univers z0 Gravity</h1>
+        <p class="text-white text-center font_20 w-75 mx-auto">Plannings, budgets, calendriers… En un clin d'œil, vous avez une vision globale et stratégique de l'avancée de vos projets en temps réel !</p>
+        <button class="button-2 w-25 mx-auto rounded-5 buton_custom1 margin-bottom-100"><a class="text-decoration-none text-black " style="line-height: 39px;"> <i class="fa-solid fa-play"></i>Présentation vidéo</a></button>
+        <img src="./img/app.jpg" alt="">
 
-                            // var_dump();
+      </div>
 
-                                                  // exit;
-                                // ==================================================================
+      </div> 
+  </div>
 
+   
+    <div class="container-fluid bg-white">
+      <div class="row justify-content-center padding-top-100">
+        <div class="col-3 "><h1 style="text-align:center;">Vous êtes…</h1></div>
+      </div>
+      <div class="row justify-content-center mt-5 gap-4 flex-lg-row flex-column align-items-center mx-auto"id="vours">
+        <div class="col-3 border rounded-4 justify-content-between align-items-center d-flex flex-column bg-white mx-0"id="vour_item1">
+          <img class="image_vours" src="https://www.z0gravity.com/storage-z0G/2019/06/ZG_icon_home_entreprise@3x.png" alt="">
+          <h3 class="heading_vours" style="color:#049BF7 ;">Une entreprise</h3>
+          <p class="descripton_vours">Jouez collectif : fédérez vos équipes autour  d'un objectif commun.</p>
+          <div class="border mx-auto bg-button1"><a class="text-decoration-none text-white" href="#">3,2,1… Go !</a></div>
+        </div>
+        <div class="col-3 border rounded-4 justify-content-between align-items-center d-flex flex-column bg-white mx-0"id="vour_item2">
+         <img class="image_vours" src="https://www.z0gravity.com/storage-z0G/2019/06/ZG_icon_home_collectivites@3x.png" alt="">
+          <h3 class="heading_vours" style="color: #FF7D66;">Une collectivité</h3>
+          <p class="descripton_vours">Rassemblez les acteurs de votre projet via un logiciel commun !</p>
+          <div class="border mx-auto bg-button1" style="background-color: #FF7D66;"><a class="text-decoration-none text-white" href="#">Découvrez comment</a></div>
+        </div>
+        <div class="col-3 border rounded-4 justify-content-between align-items-center d-flex flex-column bg-white mx-0"id="vour_item3">
+         <img class="image_vours" src="https://www.z0gravity.com/storage-z0G/2019/06/ZG_icon_home_promeneur@3x.png" alt="">
+          <h3 class="heading_vours" style="color: #FFD051;">Un promeneur égaré</h3>
+          <p class="descripton_vours">Bienvenue !  Installez-vous et  laissez-vous guider.</p>
+          <div class="border mx-auto bg-button1" style="background-color: #FFD051;"><a class="text-decoration-none text-white" href="#">Commençons par ici</a></div>
+        </div>
+      </div>
+    </div>  
+  
+   
+    <div class="container-fluid padding-top-100 bg-white">
+      <div class="row justify-content-between width_article mx-auto d-none d-lg-flex">
+        <div class="col-4 border mr-4 rounded-4 me-4 article_small padding-19 position-relative bg-white">
+          <?= $this->Html->image($article[0]['img']) ?>
+            <img src="./img/news3.jpg" class="image_article1">
+            <h3><?= $article[0]['title'] ?></h3>
+            <div class="row">
+              <div class="col-4 color-2 margin_left"><?= $article[0]['about']?></div>
+              <div class="col">15 min</div>
+            </div>
+            <p><?= $article[0]['body'] ?></p>
+            <button class="button_article sky position-absolute"><a
+              href="<?= $article[1]['link'] ?>"></a>Lire l’article</button>
+        </div>
+        <div class="col border rounded-4 article_big padding-19 position-relative bg-white">
+            <div class="row">
+              <div class="col-5">
+                <?= $this->Html->image( $article[1]['img'] ) ?>
+                <img src="./img/new2.jpg" class="image_article2">
+              </div>
+                <div class="col article-2-text ">
+                      <h3>><?= $article[1]['title'] ?></h3>
+                      <div class="row">
+                        <div class="col-6 color-1 margin_left"><?= $article[1]['about'] ?></div>
+                        <div class="col">10 min</div>
+                      </div>
+                      <p>z0 Gravity est un logiciel de gestion de projet développé avec et pour des collectivités territoriales. Grâce à son interface simple et son tableau de bord embarqué, ce logiciel de gestion de projet secteur public permet de répondre efficacement aux contraintes de temps et de budget des collectivités territoriales.</p>
+                      <button class="button_article sky position-absolute">Lire l’article</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-between width_article mx-auto d-none d-lg-flex">
+        <div class="col border mt-4 rounded-4 article_big me-4 padding-19 position-relative bg-white">
+              <h3>Logiciel de gestion de projet en ligne SaaS</h3>
+              <div class="row"><div class="col-2 color-3 margin_left">PMO</div>
+                               <div class="col">8 min</div>
+              </div>
+              <p>La gestion d’un projet implique en réalité de réaliser une succession de tâches très différentes pour l’entreprise et qu’il faut, bien souvent, mener de front : planification, répartition des ressources, des tâches, activités de reporting, suivi de l’avancée des projets, de la consommation des budgets, etc.</p>
+              <button class="button_article sky position-absolute">Lire l’article</button>
+        </div>
+        <div class="col-5 border mt-4 rounded-4 article_small padding-19 position-relative bg-white">
+              <h3>7 conseils clés pour bien s’équiper d’un outil de gestion de projet</h3>
+              <div class="row"><div class="col-3 color-4 margin_left">CLIENT</div>
+                               <div class="col">12 min</div></div>
+              <p>Vous avez décidé qu’il était temps d’investir dans un outil de gestion de projet pour votre entreprise ? Vous souhaitez gagner en productivité et en efficacité dans la gestion de vos affaires courantes et, par la même occasion, en faire profiter tous les services ? C’est une très bonne idée.</p>
+              <button class="button_article sky position-absolute">Lire l’article</button>
+        </div>
+       
+      </div>
+            <div class="row justify-content-center mt-5 margin-bottom-100">
+                <button class="bg-button1 text-center border rounded-5 text-white margin-top-210" style="width: 230px;">Voir tous les articles</button>
+                <h1 class="text-center fw-bold ">Voir tous les articles</h1>
+                <h1 class="text-center fw-normal">Assez parlé de nous. Parlez-nous de vous !</h1>
+                <button class="button-2 orange text-white mt-5" style="width:230px;">On discute !</button>
+            </div>
+            <div class="container-fluid bg-dark">
+      <div class="container-xxl">
+      <div class="row justify-content-center padding-top-65 flex-column flex-md-row  ">
+        <div class="col-md-3 col  text-center">
+          <img src="https://www.z0gravity.com/storage-z0G/2019/05/z0_Gravity_Logo_BlancBleu-1.svg" class="width-logo-bottom">
+          <p class="text_color_blue">Ensemble, on va plus loin.</p>
+        </div>
+        <div class="col-md-2 col text-center fs-5 mb-5">
+          <div><a class="text-decoration-none text-white" href="#">Entreprises</a></div>
+          <div><a class="text-decoration-none text-white" href="#">Collectivités</a></div>
+          <div><a class="text-decoration-none text-white" href="#">À propos</a></div>
+          <div><a class="text-decoration-none text-white" href="#">Contact</a></div>
+          <div><a class="text-decoration-none text-white" href="#">Blog</a></div>
+        </div>
+        <div class="col-md-3 col text-md-start text-center">
+          <p class="text_color_blue m-0 fs-6">SUIVEZ-NOUS</p>
+          <div class="text-white fs-4">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter ms-2 me-2"></i>
+            <i class="fa-brands fa-vimeo"></i>
+          </div>
+          <!-- Button trigger modal -->
+            <button type="button" class="button-3 text-white mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+             <i class="fa-solid fa-globe text-white"></i>  Changer de region
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-lg">
+                <div class="modal-content mx-md-3 rounded-4">
+                  <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <h1 class="ps-5 text-start">Changer de région</h1>
+                  <p class="ps-5 text-start">Si vous sélectionnez une autre région, la langue et le contenu de z0gravity.com changeront.</p>
+                  <div class="row mt-md-5 justify-content-between p-5 ps-5 text-start">
+                      <div class="col-12 col-md-2 font-600">
+                        <a class="text-black text-decoration-none mt-3 " href="">Deutsch</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">English</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">Español</a><br>
+                      </div>
+                      <div class="col-12 col-md-2 font-600 text-start">
+                        <a class="text-black text-decoration-none mt-3 " href="">Français</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">Nederlands</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">Polski</a><br>
+                      </div>
+                      <div class="col-12 col-md-2 font-600 text-start">
+                        <a class="text-black text-decoration-none mt-3 " href="">Português</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">Русский</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">Bokmål</a><br>
+                      </div>
+                      <div class="col-12 col-md-2 font-600 text-start">
+                        <a class="text-black text-decoration-none mt-3 " href="">Ελληνικά</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">日本語繁</a><br>
+                        <a class="text-black text-decoration-none mt-3 " href="">體中文</a><br>
+                      </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+      <div class="row text-start justify-content-center padding-top-65 gap-2">
+        <div class="col-md-7 mx-md-0 col mx-auto mb-3">
+        <a class="text-decoration-none" class="text-decoration-none text-white" href="#">© 2019 Globalsi SAS</a>
+        <a class="text-decoration-none ms-2" href="#">Plan du site</a>
+        <a class="text-decoration-none ms-2" href="#">Contactez-nous</a>
+        <a class="text-decoration-none ms-2" href="#"> Mentions légales</a>
+      </div>
+    </div>
+    </div>
+  </div>
+   
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  
+  </script>
+</body>
 
-                          $this->loadModel('Pres');
-                          $query = $this->Pres->find(
-                              'all', ['limit'=>3]);
-                          $query->enableHydration(false);
-                          $pres = $query->toList();
-                          // debug($pre[0]['id']);
-                          $this->set(compact('pres'));
-
-                          // =============================================================================
-                          $this->loadModel('Pours');
-                          $pours= $this->Pours->find(
-                              'all', [
-                                  'order'=> 'rand()',
-                                  'limit'=>1,
-                              ]
-                          );
-                          $this->set(compact('pours'));
-
-
-                          $this->loadModel('Articles');
-                          $query = $this->Articles->find(
-                              'all', [
-
-                                  'limit'=>4,
-                              ]
-                          );
-                          $query->enableHydration(false);
-                          $article = $query->toList();
-                              $this->set(compact('article'));
-
-                              $this->loadModel('Bars');
-                              $bars= $this->Bars->find('all');
-                              $this->set(compact('bars'));
-                              foreach ($bars as $bar)
-
-                              $this->loadModel('Displays');
-                              $displays= $this->Displays->find(
-                                   'all', [
-                                  'order'=> 'rand()',
-                                  'limit'=>1,
-                              ]
-                              );
-                              $this->set(compact('displays'));
-                              foreach ($displays as $display)
-
-                                // ============================================
-                                  $pre = $this->Pres->get($pres[0]['id'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-                                  $pre1 = $this->Pres->get($pres[1]['id'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-                                  $pre2 = $this->Pres->get($pres[2]['id'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-                                  $display = $this->Displays->get($display['id']);
-
-                                  // GET ID ARTCLE
-                                  $article1 = $this->Articles->get($article[0]['id_article'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-                                  $article2 = $this->Articles->get($article[1]['id_article'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-                                  $article3 = $this->Articles->get($article[2]['id_article'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-                                  $article4 = $this->Articles->get($article[3]['id_article'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-                                  $header = $this->Headers->get($header[0]['id_headers'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-
-
-                                  $post = $this->Posts->get($post['id_posts']);
-
-
-                                // debug($pre);
-                                // debug($pre1);
-                                // debug($pre2 );
-                                // debug($article1);
-                                // debug($article2);
-                                // debug($article3);
-                                // debug($article4);
-                                // debug($header);
-                                // debug($bar);
-
-                                // exit;
-                                  $bar = $this->Bars->get($bar['id'], [
-                                      'finder' => 'translations',
-                                                                  ]);
-
-
-
-
-
-                                      // DATA PRESS
-                               if ($this->request->is(['post', 'put'])) {
-
-                                 $data = [
-                                      'title_pres' => $this->request->getData('title_pres1'),
-                                      'author' => $this->request->getData('author1'),
-                                      'dress' => $this->request->getData('dress1'),
-                                      'logo' => $this->request->getData('logo1'),
-                                      'link' => $this->request->getData('link1'),
-                                      'about_pres' => $this->request->getData('about_pres1'),
-                                   ];
-                                 $data1 = [
-                                     'title_pres' => $this->request->getData('title_pres2'),
-                                     'author' => $this->request->getData('author2'),
-                                     'dress' => $this->request->getData('dress2'),
-                                     'logo' => $this->request->getData('logo2'),
-                                     'link' => $this->request->getData('link2'),
-                                     'about_pres' => $this->request->getData('about_pres2'),
-                                     ];
-                                     // debug($data1);
-                                     // exit;
-                                       //  DATA ARTICLE
-                                 $data2 = [
-                                      'title' => $this->request->getData('title1'),
-                                      'link' => $this->request->getData('link1'),
-                                      'body' => $this->request->getData('body1'),
-                                      'about' => $this->request->getData('about1'),
-                                       ];
-                                 $data3 = [
-                                       'title' => $this->request->getData('title2'),
-                                       'link' => $this->request->getData('link2'),
-                                       'body' => $this->request->getData('body2'),
-                                       'about' => $this->request->getData('about2'),
-                                       ];
-                                 $data4 = [
-                                       'title' => $this->request->getData('title3'),
-                                       'link' => $this->request->getData('link3'),
-                                       'body' => $this->request->getData('body3'),
-                                       'about' => $this->request->getData('about3'),
-                                           ];
-                                 $data5 = [
-                                       'title' => $this->request->getData('title4'),
-                                       'link' => $this->request->getData('link4'),
-                                       'body' => $this->request->getData('body4'),
-                                       'about' => $this->request->getData('about4'),
-                                         ];
-                                 $data6 = [
-                                       'backgroun_header' => $this->request->getData('backgroun_header'),
-                                       'color_header' => $this->request->getData('color_header'),
-                                       'color_prou' => $this->request->getData('color_prou'),
-                                       'image_pour' => $this->request->getData('image_pour'),
-                                       'image_header' => $this->request->getData('image_header'),
-                                       'color_button' => $this->request->getData('color_button'),
-
-                                         ];
-                                         $header->translation('vi_VN')->author = $this->request->getData('vi_title');
-                                         $header->translation('vi_VN')->dress = $this->request->getData('vi_about');
-                                         $header->translation('vi_VN')->about_headers = $this->request->getData('vi_button');
-
-                                         $header->translation('es')->author = $this->request->getData('vi_author1');
-                                         $header->translation('es')->dress = $this->request->getData('vi_dress1');
-                                         $header->translation('es')->about_pres = $this->request->getData('vi_about_pres1');
-
-                                         $header->translation('en_US')->author = $this->request->getData('vi_author2');
-                                         $header->translation('en_US')->dress = $this->request->getData('vi_dress2');
-                                         $header->translation('en_US')->about_pres = $this->request->getData('vi_about_pres2');
-
-
-
-                                       $pre->translation('vi_VN')->author = $this->request->getData('vi_author');
-                                       $pre->translation('vi_VN')->dress = $this->request->getData('vi_dress');
-                                       $pre->translation('vi_VN')->about_pres = $this->request->getData('vi_about_pres');
-
-                                       $pre1->translation('vi_VN')->author = $this->request->getData('vi_author1');
-                                       $pre1->translation('vi_VN')->dress = $this->request->getData('vi_dress1');
-                                       $pre1->translation('vi_VN')->about_pres = $this->request->getData('vi_about_pres1');
-
-                                       $pre2->translation('vi_VN')->author = $this->request->getData('vi_author2');
-                                       $pre2->translation('vi_VN')->dress = $this->request->getData('vi_dress2');
-                                       $pre2->translation('vi_VN')->about_pres = $this->request->getData('vi_about_pres2');
-
-
-                                     $this->Pres->patchEntity($pre, $this->request->getData());
-                                     $this->Pres->patchEntity($pre1, $data);
-                                     $this->Pres->patchEntity($pre2, $data1);
-                                     $this->Headers->patchEntity($header, $this->request->getData());
-                                     $this->Articles->patchEntity($article1, $data2);
-                                     $this->Articles->patchEntity($article2, $data3);
-                                     $this->Articles->patchEntity($article3, $data4);
-                                     $this->Articles->patchEntity($article4, $data5);
-                                     $this->Displays->patchEntity($display, $data6);
-                                     $this->Bars->patchEntity($bar, $this->request->getData());
-                                     $this->Posts->patchEntity($post, $this->request->getData());
-                                     // debug($pre);
-                                     // debug($pre1);
-                                     // debug($pre2);
-                                     // exit;
-                                   if ($this->Pres->save($pre) && $this->Pres->save($pre1) && $this->Pres->save($pre2) && $this->Headers->save($header)
-                                       && $this->Articles->save($article1) && $this->Articles->save($article2) && $this->Articles->save($article3)
-                                       && $this->Articles->save($article4) && $this->Displays->save($display) && $this->Bars->save($bar) && $this->Posts->save($post)) {
-                                       $this->Flash->success(__('Your header has been updated.'));
-                                       return $this->redirect(['action' => 'home']);
-                                   }
-                                   $this->Flash->error(__('Unable to update your header.'));
-                               }
-                               debug($header->translation('vi_VN')->title);
-
-                                      $this->set('header', $header);
-                                      $this->set('pre', $pre);
-                                      $this->set('pre1', $pre1);
-                                      $this->set('pre2', $pre2);
-                                      $this->set('article1', $article1);
-                                      $this->set('article2', $article2);
-                                      $this->set('article3', $article3);
-                                      $this->set('article4', $article4);
-                                      $this->set('display', $display);
-                                      $this->set('bar', $bar);
-                                      $this->set('post', $post);
-
-    }
-       public function index()
-            {
-                                    $posts = $this->Posts->find('all');
-                                    $this->set(['posts' => $posts]);
-                                    $query = $this->Articles->find('all');
-                                    $query->enableHydration(false);
-                                    $article = $query->toList();
-
-                                        $this->set(compact('article'));
-
-                                      $pres = $this->Pres->find( 'all', [
-                                                          'order'=> 'rand()',
-                                                          'limit'=>3,
-                                                      ]);
-                                      $this->set([
-                                          'pres' => $pres,
-                                          '_serialize' => ['pres']
-                                      ]);
-
-                                  }
-
-                                  public function view($id)
-                                  {
-                                      $pre = $this->Pres->get($id);
-                                      $this->set([
-                                          'pre' => $pre,
-                                          '_serialize' => ['pre']
-                                    ]);
-          }
-
-
-    public function add()
-    {
-              $user = $this->Users->get(  $this->request->session()->read('Auth.User.id'));
-              $this->set('user', $user);
-              $posts = $this->Posts->find('all');
-              $this->set(['posts' => $posts]);
-              $article = $this->Articles->newEntity($this->request->getData());
-              if ($this->request->is('post')) {
-              $translations = [
-
-                              // TIENG ANH
-                  'en_US' => ['about' => $this->request->getData('_translations.en_US.about')],
-                  'en_US' => ['body' => $this->request->getData('_translations.en_US.body')],
-                  'en_US' => ['title' => $this->request->getData('_translations.en_US.title')],
-
-                              // TAY BAN NHA
-                  'es' => ['about' => $this->request->getData('_translations.es.about')],
-                  'es' => ['body' => $this->request->getData('_translations.es.body')],
-                  'es' => ['title' => $this->request->getData('_translations.es.title')],
-
-                              // TIENGVIET
-                  'vi_VN' => ['about' => $this->request->getData('_translations.vi_VN.about')],
-                  'vi_VN' => ['body' => $this->request->getData('_translations.vi_VN.body')],
-                  'vi_VN' => ['title' => $this->request->getData('_translations.vi_VN.title')]
-              ];
-
-
-              foreach ($translations as $lang => $data) {
-                  $article->translation($lang)->set($data, ['guard' => false]);
-              }
-
-
-              if ($this->Articles->save($article)) {
-                  $this->Flash->success(__('Your article has been saved.'));
-                  return $this->redirect(['controller' => 'Articles', 'action' => 'index']);
-              }
-              $this->Flash->error(__('Unable to add your article.'));
-              }
-              $this->set('article', $article);
-          }
-
-
-
-    public function edit($id = null)
-    {
-      $user = $this->Users->get(  $this->request->session()->read('Auth.User.id'));
-      $this->set('user', $user);
-      $posts= $this->Posts->find(
-          'all', [
-              'order'=> 'rand()',
-              'limit'=>1,
-          ]
-      );
-      $this->set(compact('posts'));
-      $post = $this->Posts->get(1);
-      if ($this->request->is(['post', 'put'])) {
-        $this->Posts->patchEntity($post, $this->request->getData());
-        if ($this->Posts->save($post)) {
-        $this->Flash->success(__('ban co the chinh sua truoc khi luu.'));
-        return $this->redirect(['action' => 'add']);
-        }
-        $this->Flash->error(__('Unable to update your post.'));
-        }
-      $this->set('post', $post);
-  }
-
-
-    public function delete($id)
-    {
-        $this->request->allowMethod(['delete']);
-        $pre = $this->Pres->get($id);
-        $message = 'Deleted';
-        if (!$this->Pres->delete($pre)) {
-            $message = 'Error';
-        }
-        $this->set([
-            'message' => $message,
-            '_serialize' => ['message']
-        ]);
-    }
-
-
-
-
-
-}
+</html>
+<?php endforeach; ?>
+<?php endforeach; ?>
